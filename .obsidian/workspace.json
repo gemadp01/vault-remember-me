@@ -1,0 +1,187 @@
+{
+  "main": {
+    "id": "975f2a19ce4debc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "8435a4b47823c040",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b43a3d20ce04969",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Laravel Vue with inertia/Inertia.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d866e04d7d4409e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "035569f5f27e2690",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca1bfa133f3795e0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "258c301a5f04f2f4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cd2e78d478e0fc0e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "574333543137cc30",
+    "type": "split",
+    "children": [
+      {
+        "id": "5dda28e8eb228f92",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73f1a88eee9d7771",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Laravel Vue with inertia/Inertia.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "71c0df2b738a14f7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Laravel Vue with inertia/Inertia.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2f984f252999d638",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "56f48e48d25b1912",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Laravel Vue with inertia/Inertia.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1b43a3d20ce04969",
+  "lastOpenFiles": [
+    "Laravel Vue with inertia/How to use.md",
+    "Laravel Vue with inertia/Inertia.md",
+    "Untitled.md",
+    "Laravel Vue with inertia/Trying config.md",
+    "Laravel Vue with inertia/Konfigurasi.md",
+    "Laravel Vue with inertia/Install and Uninstalling Laravel Valet.md",
+    "Studi kasus Laravel - Ecommerce/Step by step.md",
+    "Studi kasus Laravel - Ecommerce/E-commerce.md",
+    "Vuejs/Guides (Vue ver 2)/5. Mendalami Component Vuejs.md",
+    "Vuejs/Guides (Vue ver 2)/7. Implementasi Project dengan vue CLI.md",
+    "Vuejs/Guides (Vue ver 2)/4. Mendalami Vuejs.md",
+    "Vuejs/Guides (Vue ver 2)/3. Mengatur Style CSS.md",
+    "Vuejs/Guides (Vue ver 2)/2. Bekerja dengan Template.md",
+    "Vuejs/Guides (Vue ver 2)/8. Vue Router.md",
+    "Vuejs/Guides (Vue ver 2)/1. Perkenalan Vue.md",
+    "Advanced JavaScript.md",
+    "Untitled 1",
+    "Vuejs/Guides/6. Implementasi Project dengan vue cli.md",
+    "Vuejs/Vue CLI.md",
+    "Vuejs/eslintvue error.md",
+    "Vuejs/Vue CDN (Content Delivery Network).md",
+    "Laravel Vue with inertia",
+    "Welcome.md",
+    "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
+    "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
+    "Vuejs/Guides (Vue ver 2)",
+    "Pasted image 20240330164715.png",
+    "Pasted image 20240330164251.png",
+    "Pasted image 20240330163833.png",
+    "Untitled.canvas",
+    "Untitled",
+    "Studi kasus Laravel - Ecommerce",
+    "create a link.md",
+    "Vuejs",
+    "test {}.md"
+  ]
+}
