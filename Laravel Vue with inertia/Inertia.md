@@ -180,8 +180,9 @@ set authorize return to true;
         `return true;`
     `}`
 
-```
+
 and provide the validation into rules() method
+```
 `public function rules(): array`
     `{`
         `return [`
@@ -192,17 +193,22 @@ and provide the validation into rules() method
             `'image' => 'required|image|file|mimes:jpeg,png,jpg|max:2048',`
         `];`
     `}`
+```
 
+```
 `public function store_product(StoreProductRequest $request) {`
         `Product::create($request->validated());`
         `return redirect()->back();`
     `}`
+ ```
 
 if you want have validation error message, try this below
 only write the props of
+```
 props: {
 	errors: object;
 }
+```
 
 ```
 <template>
@@ -210,6 +216,8 @@ props: {
                                 {{ errors.description }}
         </div>
 </template>
+
+```
 
 
 #### Flash Messages
