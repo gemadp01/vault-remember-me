@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Laravel Vue with inertia/Inertia.md",
+                "file": "Laravel Vue with inertia/Trying config.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Laravel Vue with inertia/Inertia.md",
+                "file": "Laravel Vue with inertia/Trying config.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Laravel Vue with inertia/Inertia.md",
+                "file": "Laravel Vue with inertia/Trying config.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Laravel Vue with inertia/Inertia.md"
+                "file": "Laravel Vue with inertia/Trying config.md"
               }
             }
           }
@@ -148,11 +148,12 @@
   },
   "active": "1b43a3d20ce04969",
   "lastOpenFiles": [
-    "Laravel Vue with inertia/How to use.md",
     "Laravel Vue with inertia/Inertia.md",
+    "Welcome.md",
     "Laravel Vue with inertia/Install and Uninstalling Laravel Valet.md",
-    "Laravel Vue with inertia/Trying config.md",
+    "Laravel Vue with inertia/How to use.md",
     "Laravel Vue with inertia/Konfigurasi.md",
+    "Laravel Vue with inertia/Trying config.md",
     "Studi kasus Laravel - Ecommerce/Step by step.md",
     "Untitled.md",
     "Studi kasus Laravel - Ecommerce/E-commerce.md",
@@ -170,7 +171,6 @@
     "Vuejs/eslintvue error.md",
     "Vuejs/Vue CDN (Content Delivery Network).md",
     "Laravel Vue with inertia",
-    "Welcome.md",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
     "Vuejs/Guides (Vue ver 2)",

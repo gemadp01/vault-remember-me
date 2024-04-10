@@ -296,3 +296,21 @@ or if the guide above not works, you can try this below
          `Delete`
 `</Link>`
 #### Edit Form
+`import { useForm } from "@inertiajs/vue3";`
+
+`const form = useForm({`
+            `oldImage: props.product.image,`
+            `id: props.product.id,`
+            `name: props.product.name,`
+            `description: props.product.description,`
+            `price: props.product.price,`
+            `stock: props.product.stock,`
+            `image: props.product.image,`
+        `});`
+
+`return {`
+            `form,`
+        `};`
+
+
+untuk form html masih sama seperti halnya pada create, dapat menggunakan method put dan patch
