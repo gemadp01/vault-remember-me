@@ -8,7 +8,9 @@ didalam table terdapat kolom dan baris,
 - kolom, atribut yang dimiliki oleh setiap data (id, nama, dll)
 - baris, record data (data dari sebuah table)
 
-umunya untuk membuat sebuah table didalam database sql, harus menguasai query language sql
+umumnya untuk membuat sebuah table didalam database sql, harus menguasai query language sql
+
+mySQL all in one packages 
 
 ### Migration
 https://laravel.com/docs/9.x/migrations#main-content
@@ -67,3 +69,46 @@ singular dari nama table diikuti "Seeder"
 dipisahkan dengan huruf kapital
 
 didalam StudentSeeder terdapat satu method default ialah run(), yang dimana method tersebut akan dijalankan pada saat kita menjalankan StudentSeeder
+
+`use Illuminate\Support\Facades\DB;`
+
+`Class Student extend Seeder {`
+`public function run()`
+    `{`
+    membuat object baru $data yang berisi data-data didalamnya (array of array)
+    setiap array berisi record yang kita masukkan
+        `$data = [`
+        array[0] -> record pertama
+            `[`
+                `'id' => 1,`
+                `'name' => 'Maryanto',`
+                `'score' => 100`
+            `],`
+            array[1] -> record kedua
+            `[`
+                `'id' => 2,`
+                `'name' => 'Ahmad',`
+                `'score' => 90`
+            `],`
+            array[2] -> record ketiga
+            `[`
+                `'id' => 3,`
+                `'name' => 'Budi',`
+                `'score' => 95`
+            `],`
+        `];`
+        Facades DB specified table 'Students', lalu passing data from $data (agar tidak terlalu panjang isi dari methodnya)
+        `DB::table('students')->insert($data);`
+    `}`
+`}`
+
+### Menjalankan seeder
+`php artisan db:seed`
+menjalankan DatabaseSeeder.php yang mana isinya dapat memanggil kelas seeder yang lain
+
+`php artisan db:seed --class=StudentSeeder`
+menjalankan spesifik seeder
+
+## Faker
+https://fakerphp.github.io/
+sebuah library php yang dapat mengenerate data palsu seperti nama, angka, alamat, dll.
