@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1b43a3d20ce04969",
+            "id": "da483d48f82fbdc3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Laravel Vue with inertia/Trying config.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Laravel Vue with inertia/Trying config.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Laravel Vue with inertia/Trying config.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Laravel Vue with inertia/Trying config.md"
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md"
               }
             }
           }
@@ -146,16 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1b43a3d20ce04969",
+  "active": "da483d48f82fbdc3",
   "lastOpenFiles": [
+    "Laravel Vue with inertia/Trying config.md",
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Untitled",
     "Laravel Vue with inertia/Inertia.md",
     "Welcome.md",
     "Laravel Vue with inertia/Install and Uninstalling Laravel Valet.md",
     "Laravel Vue with inertia/How to use.md",
     "Laravel Vue with inertia/Konfigurasi.md",
-    "Laravel Vue with inertia/Trying config.md",
     "Studi kasus Laravel - Ecommerce/Step by step.md",
-    "Untitled.md",
     "Studi kasus Laravel - Ecommerce/E-commerce.md",
     "Vuejs/Guides (Vue ver 2)/5. Mendalami Component Vuejs.md",
     "Vuejs/Guides (Vue ver 2)/7. Implementasi Project dengan vue CLI.md",
@@ -178,7 +179,6 @@
     "Pasted image 20240330164251.png",
     "Pasted image 20240330163833.png",
     "Untitled.canvas",
-    "Untitled",
     "Studi kasus Laravel - Ecommerce",
     "create a link.md",
     "Vuejs",
