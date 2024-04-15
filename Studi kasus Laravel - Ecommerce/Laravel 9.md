@@ -111,12 +111,12 @@ menjalankan spesifik seeder
 
 ## Faker
 https://fakerphp.github.io/
-sebuah library php yang dapat mengenerate data palsu seperti nama, angka, alamat, dll.
+sebuah library php yang dapat men-generate data palsu seperti nama, angka, alamat, dll.
 
 contoh penggunaan
-use Faker\Factory as Faker;
+`use Faker\Factory as Faker;`
 
-$faker = Faker::create('id_ID');
+`$faker = Faker::create('id_ID');`
 objek $faker baru dari Facades Faker
 specify data berdasarkan region 
 jadi, data-data yang di generate faker name, dll akan disesuaikan dengan region nya
@@ -124,7 +124,13 @@ jadi, data-data yang di generate faker name, dll akan disesuaikan dengan region 
 setiap looping (5 kali) insert data name dan score kedalam table students
         `for($i = 1; $i <= 5; $i++){`
             `DB::table('students')->insert([`
+            id bisa di insert secara otomatis, 
+            data baru (tanpa id) akan keeptrack id yang lama
                 `'name' => $faker->name,`
                 `'score' => $faker->numberBetween(0, 100),`
             `]);`
         `}`
+
+terus jalankan seedernya
+`php artisan db:seed`
+!tanpa specify kelas, karena kita buat di DatabaseSeeder.php
