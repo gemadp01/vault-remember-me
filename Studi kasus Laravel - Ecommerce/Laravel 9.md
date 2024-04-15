@@ -1,6 +1,8 @@
 https://laravel.com/docs/9.x
 
+
 ## Database
+### Database Migration
 Sebuah tempat dimana semua informasi aplikasi tersimpan didalamnya
 bentuk umum dari database ialah database jenis sql, tiap data direpresentasikan sebagai table
 
@@ -12,7 +14,7 @@ umumnya untuk membuat sebuah table didalam database sql, harus menguasai query l
 
 mySQL all in one packages 
 
-### Migration
+#### Migration
 https://laravel.com/docs/9.x/migrations#main-content
 pada laravel terdapat fitur migration (database migration),
 beberapa kasus ketika menggunakan database sql secara langsung
@@ -23,7 +25,7 @@ beberapa kasus ketika menggunakan database sql secara langsung
 dengan laravel kita dapat menggunakan fitur migration (tool) untuk memudahkan dalam mendefine apa-apa saja konfigurasi database yang akan kita gunakan, 
 atribut pada table dapat digambar dalam sebuah syntax php (id, nama dll)
 
-### Create Migration
+#### Create Migration
 backtick -> tilda
 
 `php artisan make:migration create_students_table`
@@ -54,15 +56,15 @@ konfigurasi .env disesuaikan dengan management database yang kita gunakan, dan j
 `DB_USERNAME=root`
 `DB_PASSWORD=`
 
-### Menjalankan Migration
+#### Menjalankan Migration
 jika belum mempunyai database dan langsung menjalankan migration, maka laravel akan otomatis memberi saran untuk membuat database dengan nama yang sama dengan value DB_DATABASE pada .env
 `php artisan migrate`
 
-## Database Seeding
+### Database Seeding
 adalah sebuah aksi, kita akan mempopulate database dengan data yang sudah kita sediakan,
 misal, pada saat initiate database kita dapat memasukkan data-data yang sudah kita sediakan sebelumnya
 
-### Create seeder
+#### Create seeder
 `php artisan make:seeder StudentSeeder`
 konfensi penamaan seeder pada laravel,
 singular dari nama table diikuti "Seeder"
@@ -102,14 +104,14 @@ didalam StudentSeeder terdapat satu method default ialah run(), yang dimana meth
     `}`
 `}`
 
-### Menjalankan seeder
+#### Menjalankan seeder
 `php artisan db:seed`
 menjalankan DatabaseSeeder.php yang mana isinya dapat memanggil kelas seeder yang lain
 
 `php artisan db:seed --class=StudentSeeder`
 menjalankan spesifik seeder
 
-## Faker
+### Faker
 https://fakerphp.github.io/
 sebuah library php yang dapat men-generate data palsu seperti nama, angka, alamat, dll.
 
@@ -134,3 +136,87 @@ setiap looping (5 kali) insert data name dan score kedalam table students
 terus jalankan seedernya
 `php artisan db:seed`
 !tanpa specify kelas, karena kita buat di DatabaseSeeder.php
+
+## MVC
+Laravel merupakan Framework MVC
+### Model
+Bagian dari Laravel yang berinteraksi secara langsung dengan database, sehingga setiap record yang ada pada database akan direpresentasikan dalam object php yang bernama **Model**.
+
+jadi ketika ingin mengambil/membuat menggunakan data, karena semua data pada database sudah direpresentasikan sebagai model
+
+`php artisan make:model Student`
+!konfensi penamaan model singular dengan huruf pertama kapital
+
+model dapat dilihat pada,
+app -> Models -> yourModel.php
+
+yang dapat dilakukan pada model,
+https://laravel.com/docs/9.x/eloquent
+
+kita dapat men-state table apa yang berasosiasi dengan model terkait
+misal, Student.php 
+`class Student extends Model`
+	`{`
+		`protected $table = 'students';`
+		`protected $primaryKey = 'flight_id';`
+		`public $incrementing = false;`
+		`protected $keyType = 'string';`
+		dll
+	`}`
+!karena kita sudah mengikuti konvensi sesuai aturan laravel cara diatas tidak perlu dilakukan, karena laravel akan secara otomatis mem-mapping model dengan nama table yang sesuai
+### Routing
+sebuah bagian yang mengatur endpoint apa-apa saja yang ada pada aplikasi web kita.
+misal /register apa yang akan dilakukan ketika mengunjungi endpoint /register, dll
+
+untuk melihat routing ada di,
+routes -> web.php
+
+Terdapat 5 (lima) http method,
+get, digunakan untuk mem-retrieve data (mengambil data)
+post, digunakan untuk mem-submit data
+put, digunakan untuk mem-update keseluruhan data
+patch, digunakan untuk mem-update sebagian data
+delete, digunakan untuk mem-delete data
+`Route::get('/greeting', function () {`
+	argument pertama ialah endpoint
+	argument kedua ialah callback function, apa yang dilakukan ketika user mengakses endpoint /greeting ini
+    `return 'Hello World!';`
+`});`
+#### Route Parameters
+passing sesuatu pada route yang dapat digunakan pada callback function
+
+// passing variable {name}
+`Route::get('/greeting/{name}', function () {`
+passing {name} variabel name 
+    `return 'Hello ' . $name;`
+    value $name didapat dari route yang dipassing (akan berisi apapun yang kita kirim pada url )
+`});`
+
+#### Named Route (optional)
+setiap route bisa kita beri nama, jadi mempermudah ketika kita mereference suatu route (baik itu pada controller maupun view),
+!usahakan memberi nama pada route
+`Route::get('/greeting/{name}', function () {`
+    `return 'Hello ' . $name;`
+`})->name('greeting_with_name');`
+ini tidak akan berpengaruh apa-apa, tapi ketika ingin memanggil route dari komponen lain, kita cukup reference name dari route nya
+
+!menjalankan aplikasi laravel,
+`php artisan serve`
+
+### Views
+Mengatur tampilan dari aplikasi web.
+mengatur apa yang akan dilihat user nantinya.
+
+Laravel menggunakan Blade, 
+merupakan templating engine dari laravel (html + php), seperti html murni yang didalamnya kita dapat menggunakan logic pada blade dengan syntax php
+
+resources -> views -> yourView.blade.php
+
+format penamaan, 
+namaFile diikuti .blade.php
+example.blade.php
+
+`Route::get('/greeting/{name}', function () {`
+    `return 'Hello ' . $name;`
+`})->name('greeting_with_name');`
+### Controller
