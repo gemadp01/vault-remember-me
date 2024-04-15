@@ -164,6 +164,43 @@ misal, Student.php
 		dll
 	`}`
 !karena kita sudah mengikuti konvensi sesuai aturan laravel cara diatas tidak perlu dilakukan, karena laravel akan secara otomatis mem-mapping model dengan nama table yang sesuai
+
+- [Generating Model Classes](https://laravel.com/docs/9.x/eloquent#generating-model-classes)
+- [Eloquent Model Conventions](https://laravel.com/docs/9.x/eloquent#eloquent-model-conventions)
+    - [Table Names](https://laravel.com/docs/9.x/eloquent#table-names)
+    - [Primary Keys](https://laravel.com/docs/9.x/eloquent#primary-keys)
+    - [UUID & ULID Keys](https://laravel.com/docs/9.x/eloquent#uuid-and-ulid-keys)
+    - [Timestamps](https://laravel.com/docs/9.x/eloquent#timestamps)
+    - [Database Connections](https://laravel.com/docs/9.x/eloquent#database-connections)
+    - [Default Attribute Values](https://laravel.com/docs/9.x/eloquent#default-attribute-values)
+    - [Configuring Eloquent Strictness](https://laravel.com/docs/9.x/eloquent#configuring-eloquent-strictness)
+- [Retrieving Models](https://laravel.com/docs/9.x/eloquent#retrieving-models)
+    - [Collections](https://laravel.com/docs/9.x/eloquent#collections)
+    - [Chunking Results](https://laravel.com/docs/9.x/eloquent#chunking-results)
+    - [Chunk Using Lazy Collections](https://laravel.com/docs/9.x/eloquent#chunking-using-lazy-collections)
+    - [Cursors](https://laravel.com/docs/9.x/eloquent#cursors)
+    - [Advanced Subqueries](https://laravel.com/docs/9.x/eloquent#advanced-subqueries)
+- [Retrieving Single Models / Aggregates](https://laravel.com/docs/9.x/eloquent#retrieving-single-models)
+    - [Retrieving Or Creating Models](https://laravel.com/docs/9.x/eloquent#retrieving-or-creating-models)
+    - [Retrieving Aggregates](https://laravel.com/docs/9.x/eloquent#retrieving-aggregates)
+- [Inserting & Updating Models](https://laravel.com/docs/9.x/eloquent#inserting-and-updating-models)
+    - [Inserts](https://laravel.com/docs/9.x/eloquent#inserts)
+    - [Updates](https://laravel.com/docs/9.x/eloquent#updates)
+    - [Mass Assignment](https://laravel.com/docs/9.x/eloquent#mass-assignment)
+    - [Upserts](https://laravel.com/docs/9.x/eloquent#upserts)
+- [Deleting Models](https://laravel.com/docs/9.x/eloquent#deleting-models)
+    - [Soft Deleting](https://laravel.com/docs/9.x/eloquent#soft-deleting)
+    - [Querying Soft Deleted Models](https://laravel.com/docs/9.x/eloquent#querying-soft-deleted-models)
+- [Pruning Models](https://laravel.com/docs/9.x/eloquent#pruning-models)
+- [Replicating Models](https://laravel.com/docs/9.x/eloquent#replicating-models)
+- [Query Scopes](https://laravel.com/docs/9.x/eloquent#query-scopes)
+    - [Global Scopes](https://laravel.com/docs/9.x/eloquent#global-scopes)
+    - [Local Scopes](https://laravel.com/docs/9.x/eloquent#local-scopes)
+- [Comparing Models](https://laravel.com/docs/9.x/eloquent#comparing-models)
+- [Events](https://laravel.com/docs/9.x/eloquent#events)
+    - [Using Closures](https://laravel.com/docs/9.x/eloquent#events-using-closures)
+    - [Observers](https://laravel.com/docs/9.x/eloquent#observers)
+    - [Muting Events](https://laravel.com/docs/9.x/eloquent#muting-events)
 ### Routing
 sebuah bagian yang mengatur endpoint apa-apa saja yang ada pada aplikasi web kita.
 misal /register apa yang akan dilakukan ketika mengunjungi endpoint /register, dll
@@ -207,6 +244,7 @@ ini tidak akan berpengaruh apa-apa, tapi ketika ingin memanggil route dari kompo
 Mengatur tampilan dari aplikasi web.
 mengatur apa yang akan dilihat user nantinya.
 
+https://laravel.com/docs/9.x/blade#main-content
 Laravel menggunakan Blade, 
 merupakan templating engine dari laravel (html + php), seperti html murni yang didalamnya kita dapat menggunakan logic pada blade dengan syntax php
 
@@ -217,6 +255,121 @@ namaFile diikuti .blade.php
 example.blade.php
 
 `Route::get('/greeting/{name}', function () {`
-    `return 'Hello ' . $name;`
+		
+view('namaFile');
+method view() relative terhadap resources -> views -> namaFile
+jika blade view didalam folder bisa ditambahkan "." untuk pemisah
+view('layouts.example');
+
+    `return view('example', [
+	    'name' => $name
+    ]);`
+    
+  
 `})->name('greeting_with_name');`
+
+You may display the contents of the `name` variable like so (in Views of blade):
+Hello, {{ $name }}.
+
+Blade's `{{ }}` echo statements are automatically sent through PHP's `htmlspecialchars` function to prevent XSS attacks.
+
+ibarat ini codingan php {{}}
+
+- [Introduction](https://laravel.com/docs/9.x/blade#introduction)
+    - [Supercharging Blade With Livewire](https://laravel.com/docs/9.x/blade#supercharging-blade-with-livewire)
+- [Displaying Data](https://laravel.com/docs/9.x/blade#displaying-data)
+    - [HTML Entity Encoding](https://laravel.com/docs/9.x/blade#html-entity-encoding)
+    - [Blade & JavaScript Frameworks](https://laravel.com/docs/9.x/blade#blade-and-javascript-frameworks)
+- [Blade Directives](https://laravel.com/docs/9.x/blade#blade-directives)
+    - [If Statements](https://laravel.com/docs/9.x/blade#if-statements)
+    - [Switch Statements](https://laravel.com/docs/9.x/blade#switch-statements)
+    - [Loops](https://laravel.com/docs/9.x/blade#loops)
+    - [The Loop Variable](https://laravel.com/docs/9.x/blade#the-loop-variable)
+    - [Conditional Classes](https://laravel.com/docs/9.x/blade#conditional-classes)
+    - [Additional Attributes](https://laravel.com/docs/9.x/blade#additional-attributes)
+    - [Including Subviews](https://laravel.com/docs/9.x/blade#including-subviews)
+    - [The `@once` Directive](https://laravel.com/docs/9.x/blade#the-once-directive)
+    - [Raw PHP](https://laravel.com/docs/9.x/blade#raw-php)
+    - [Comments](https://laravel.com/docs/9.x/blade#comments)
+- [Components](https://laravel.com/docs/9.x/blade#components)
+    - [Rendering Components](https://laravel.com/docs/9.x/blade#rendering-components)
+    - [Passing Data To Components](https://laravel.com/docs/9.x/blade#passing-data-to-components)
+    - [Component Attributes](https://laravel.com/docs/9.x/blade#component-attributes)
+    - [Reserved Keywords](https://laravel.com/docs/9.x/blade#reserved-keywords)
+    - [Slots](https://laravel.com/docs/9.x/blade#slots)
+    - [Inline Component Views](https://laravel.com/docs/9.x/blade#inline-component-views)
+    - [Dynamic Components](https://laravel.com/docs/9.x/blade#dynamic-components)
+    - [Manually Registering Components](https://laravel.com/docs/9.x/blade#manually-registering-components)
+- [Anonymous Components](https://laravel.com/docs/9.x/blade#anonymous-components)
+    - [Anonymous Index Components](https://laravel.com/docs/9.x/blade#anonymous-index-components)
+    - [Data Properties / Attributes](https://laravel.com/docs/9.x/blade#data-properties-attributes)
+    - [Accessing Parent Data](https://laravel.com/docs/9.x/blade#accessing-parent-data)
+    - [Anonymous Components Paths](https://laravel.com/docs/9.x/blade#anonymous-component-paths)
+- [Building Layouts](https://laravel.com/docs/9.x/blade#building-layouts)
+    - [Layouts Using Components](https://laravel.com/docs/9.x/blade#layouts-using-components)
+    - [Layouts Using Template Inheritance](https://laravel.com/docs/9.x/blade#layouts-using-template-inheritance)
+- [Forms](https://laravel.com/docs/9.x/blade#forms)
+    - [CSRF Field](https://laravel.com/docs/9.x/blade#csrf-field)
+    - [Method Field](https://laravel.com/docs/9.x/blade#method-field)
+    - [Validation Errors](https://laravel.com/docs/9.x/blade#validation-errors)
+- [Stacks](https://laravel.com/docs/9.x/blade#stacks)
+- [Service Injection](https://laravel.com/docs/9.x/blade#service-injection)
+- [Rendering Inline Blade Templates](https://laravel.com/docs/9.x/blade#rendering-inline-blade-templates)
+- [Rendering Blade Fragments](https://laravel.com/docs/9.x/blade#rendering-blade-fragments)
+- [Extending Blade](https://laravel.com/docs/9.x/blade#extending-blade)
+    - [Custom Echo Handlers](https://laravel.com/docs/9.x/blade#custom-echo-handlers)
+    - [Custom If Statements](https://laravel.com/docs/9.x/blade#custom-if-statements)
 ### Controller
+https://laravel.com/docs/9.x/controllers#main-content
+bagian dari MVC yang mengatur logic dari aplikasi laravel.
+
+kita dapat memasukkan logic di routing, tapi sesuai dengan framework MVC semua logic seharusnya ditempatkan pada controller
+
+php artisan make:controller ExampleController
+konvensi penamaan controller pada laravel ialah Nama diikuti keyword 'Controller'
+
+App -> Http -> Controllers -> YourController.php
+
+`use App\Models\Student;`
+
+`class StudentController extends Controller {`
+`public function show($id)`
+    `{`
+    melakukan query untuk mencari Student dengan id yang kita kirim lewat routing, kemudian kita akses atribut 'name' nya lalu kita passing ke view show.blade.php dengan nama variable 'student'
+        `$student = Student::find(id)->name;`
+        setiap model memiliki syntaxs eloquent dalam mempermudah melakukan query (jadi kita tidak perlu melakukan raw query), Model::find(); dll
+        `return view(`
+            `'show',`
+                `'student' => $student`
+            `]`
+        `);`
+    `}`
+`}`
+
+pada web.php
+`Route::get('/show/{id}', App\Http\Controllers\StudentController::class, 'show')->name('show');`
+jadi kita passing variable $id kedalam controller yang nantinya ditangkap pada parameter method dapat digunakan pada controller
+
+- [Introduction](https://laravel.com/docs/9.x/controllers#introduction)
+- [Writing Controllers](https://laravel.com/docs/9.x/controllers#writing-controllers)
+    - [Basic Controllers](https://laravel.com/docs/9.x/controllers#basic-controllers)
+    - [Single Action Controllers](https://laravel.com/docs/9.x/controllers#single-action-controllers)
+- [Controller Middleware](https://laravel.com/docs/9.x/controllers#controller-middleware)
+- [Resource Controllers](https://laravel.com/docs/9.x/controllers#resource-controllers)
+    - [Partial Resource Routes](https://laravel.com/docs/9.x/controllers#restful-partial-resource-routes)
+    - [Nested Resources](https://laravel.com/docs/9.x/controllers#restful-nested-resources)
+    - [Naming Resource Routes](https://laravel.com/docs/9.x/controllers#restful-naming-resource-routes)
+    - [Naming Resource Route Parameters](https://laravel.com/docs/9.x/controllers#restful-naming-resource-route-parameters)
+    - [Scoping Resource Routes](https://laravel.com/docs/9.x/controllers#restful-scoping-resource-routes)
+    - [Localizing Resource URIs](https://laravel.com/docs/9.x/controllers#restful-localizing-resource-uris)
+    - [Supplementing Resource Controllers](https://laravel.com/docs/9.x/controllers#restful-supplementing-resource-controllers)
+    - [Singleton Resource Controllers](https://laravel.com/docs/9.x/controllers#singleton-resource-controllers)
+- [Dependency Injection & Controllers](https://laravel.com/docs/9.x/controllers#dependency-injection-and-controllers)
+
+
+
+## Relations
+### One to One
+### One to Many
+### Many to Many
+4
