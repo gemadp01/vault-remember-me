@@ -603,3 +603,4 @@ Mengakses Student dari salah satu teacher
 
 !karena data Students memiliki hanya satu teacher, kita lakukan perulangan dengan foreach
 ### Many to Many
+![[Pasted image 20240416215717.png]]

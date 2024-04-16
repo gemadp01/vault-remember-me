@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+                "file": "Advanced JavaScript.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+                "file": "Advanced JavaScript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+                "file": "Advanced JavaScript.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md"
+                "file": "Advanced JavaScript.md"
               }
             }
           }
@@ -148,10 +148,11 @@
   },
   "active": "da483d48f82fbdc3",
   "lastOpenFiles": [
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Studi kasus Laravel - Ecommerce/Pasted image 20240416215717.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416210433.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416170158.png",
     "Studi kasus Laravel - Ecommerce/E-commerce.md",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Studi kasus Laravel - Ecommerce/Step by step.md",
     "Laravel Vue with inertia/Trying config.md",
     "Untitled",
