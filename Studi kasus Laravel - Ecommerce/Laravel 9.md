@@ -370,6 +370,7 @@ jadi kita passing variable $id kedalam controller yang nantinya ditangkap pada p
 
 ## Relations
 Database Relationship ialah sebuah hubungan antar table.
+https://laravel.com/docs/9.x/eloquent-relationships
 
 Bagaimana sebuah table dapat berhubungan dengan table lain?
 biasanya table tersebut menyimpan atribut dari table lainnya.
@@ -384,21 +385,130 @@ dengan nama 'student_id' (nama bebas)
 $table->unsignedBigInteger('student_id');
 
 menggunakan foreign agar atribut 'student_id' menjadi foreign key -> references ke atribut apa ('id') -> pada table apa ('students')
-$table->foreign('student_id')->references('id')->on('students');
+`$table->foreign('student_id')->references('id')->on('students');`
 
 // Shorter way
 cara pendek jika kita mengikuti semua konvensi laravel
 foreignId diikuti nama foreignKey yang akan kita gunakan -> constrained terhadap table yang mana ('students')
-$table->foreignId('student_id')->constrained('students');
+`$table->foreignId('student_id')->constrained('students');`
 
-**ERD (Entity Relationship Diagram)**
-Diagram yang menggambarkan relasi antar entitas / objek yang akan disimpan di database dan diolah dengan aplikasi / sistem
-
-Entitas -> unit/objek yang mempunyai kepentingan/menjadi bagian dari jalannya sistem
-
-Atribut -> karakteristik/identitas entitas
+- [Introduction](https://laravel.com/docs/9.x/eloquent-relationships#introduction)
+- [Defining Relationships](https://laravel.com/docs/9.x/eloquent-relationships#defining-relationships)
+    - [One To One](https://laravel.com/docs/9.x/eloquent-relationships#one-to-one)
+    - [One To Many](https://laravel.com/docs/9.x/eloquent-relationships#one-to-many)
+    - [One To Many (Inverse) / Belongs To](https://laravel.com/docs/9.x/eloquent-relationships#one-to-many-inverse)
+    - [Has One Of Many](https://laravel.com/docs/9.x/eloquent-relationships#has-one-of-many)
+    - [Has One Through](https://laravel.com/docs/9.x/eloquent-relationships#has-one-through)
+    - [Has Many Through](https://laravel.com/docs/9.x/eloquent-relationships#has-many-through)
+- [Many To Many Relationships](https://laravel.com/docs/9.x/eloquent-relationships#many-to-many)
+    - [Retrieving Intermediate Table Columns](https://laravel.com/docs/9.x/eloquent-relationships#retrieving-intermediate-table-columns)
+    - [Filtering Queries Via Intermediate Table Columns](https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns)
+    - [Ordering Queries Via Intermediate Table Columns](https://laravel.com/docs/9.x/eloquent-relationships#ordering-queries-via-intermediate-table-columns)
+    - [Defining Custom Intermediate Table Models](https://laravel.com/docs/9.x/eloquent-relationships#defining-custom-intermediate-table-models)
+- [Polymorphic Relationships](https://laravel.com/docs/9.x/eloquent-relationships#polymorphic-relationships)
+    - [One To One](https://laravel.com/docs/9.x/eloquent-relationships#one-to-one-polymorphic-relations)
+    - [One To Many](https://laravel.com/docs/9.x/eloquent-relationships#one-to-many-polymorphic-relations)
+    - [One Of Many](https://laravel.com/docs/9.x/eloquent-relationships#one-of-many-polymorphic-relations)
+    - [Many To Many](https://laravel.com/docs/9.x/eloquent-relationships#many-to-many-polymorphic-relations)
+    - [Custom Polymorphic Types](https://laravel.com/docs/9.x/eloquent-relationships#custom-polymorphic-types)
+- [Dynamic Relationships](https://laravel.com/docs/9.x/eloquent-relationships#dynamic-relationships)
+- [Querying Relations](https://laravel.com/docs/9.x/eloquent-relationships#querying-relations)
+    - [Relationship Methods Vs. Dynamic Properties](https://laravel.com/docs/9.x/eloquent-relationships#relationship-methods-vs-dynamic-properties)
+    - [Querying Relationship Existence](https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-existence)
+    - [Querying Relationship Absence](https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-absence)
+    - [Querying Morph To Relationships](https://laravel.com/docs/9.x/eloquent-relationships#querying-morph-to-relationships)
+- [Aggregating Related Models](https://laravel.com/docs/9.x/eloquent-relationships#aggregating-related-models)
+    - [Counting Related Models](https://laravel.com/docs/9.x/eloquent-relationships#counting-related-models)
+    - [Other Aggregate Functions](https://laravel.com/docs/9.x/eloquent-relationships#other-aggregate-functions)
+    - [Counting Related Models On Morph To Relationships](https://laravel.com/docs/9.x/eloquent-relationships#counting-related-models-on-morph-to-relationships)
+- [Eager Loading](https://laravel.com/docs/9.x/eloquent-relationships#eager-loading)
+    - [Constraining Eager Loads](https://laravel.com/docs/9.x/eloquent-relationships#constraining-eager-loads)
+    - [Lazy Eager Loading](https://laravel.com/docs/9.x/eloquent-relationships#lazy-eager-loading)
+    - [Preventing Lazy Loading](https://laravel.com/docs/9.x/eloquent-relationships#preventing-lazy-loading)
+- [Inserting & Updating Related Models](https://laravel.com/docs/9.x/eloquent-relationships#inserting-and-updating-related-models)
+    - [The `save` Method](https://laravel.com/docs/9.x/eloquent-relationships#the-save-method)
+    - [The `create` Method](https://laravel.com/docs/9.x/eloquent-relationships#the-create-method)
+    - [Belongs To Relationships](https://laravel.com/docs/9.x/eloquent-relationships#updating-belongs-to-relationships)
+    - [Many To Many Relationships](https://laravel.com/docs/9.x/eloquent-relationships#updating-many-to-many-relationships)
+- [Touching Parent Timestamps](https://laravel.com/docs/9.x/eloquent-relationships#touching-parent-timestamps)
 ### One to One
-sebuah table dimana setiap table hanya bisa dimiliki salah satu record lainnya
+sebuah table dimana setiap table hanya bisa dimiliki salah satu record dari table lainnya (hanya salah satu)
+![[Pasted image 20240416170158.png]]
+satu student hanya memiliki satu contact, begitu juga dengan contact
+satu contact hanya dimiliki satu student (tidak ada student yang memiliki contact yang sama persis)
+
+contoh kasus
+membuat migration baru untuk table contacts
+`php artisan make:migration create_contacts_table`
+
+inisialisasi atribut yang diperlukan pada table contacts
+`public function up()`
+    `{`
+        `Schema::create('contacts', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->foreignId('student_id')->constrained('students')->cascadeOnUpdate()->cascadeOnDelete();`
+            `$table->string('phone');`
+            `$table->string('email');`
+            `$table->string('address');`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+migrasi dari table yang belum terbuat kedalam database
+`php artisan migrate`
+
+**Defining Relationships**
+selanjutnya kita definisikan relationship nya didalam model,
+karena model representasi dari data pada database kita
+
+`class Student extends Model`
+`{`
+    `use HasFactory;`
+  
+    `protected $fillable = [`
+        `'name',`
+        `'score',`
+        `'teacher_id'`
+    `];`
+
+Satu student hanya boleh memiliki satu contact
+    `public function contact() {`
+        `return $this->hasOne(Contact::class);`
+    `}`
+`}`
+
+**Defining The Inverse Of The Relationships**
+`class Contact extends Model`
+`{`
+    `use HasFactory;`
+
+    `public function student() {`
+        `return $this->belongsTo(Student::class);`
+    `}`
+`}`
+
+kita dapat mengakses contact dengan id yang sesuai dengan id student
+`class StudentController extends Controller`
+`{`
+	`public function show($id) {`
+		1. Temukan objek `Student` berdasarkan `id` yang diberikan.
+		2. Panggil metode `contact` pada objek `Student` untuk mendapatkan objek `Contact`.
+		3. Dari objek `Contact` yang diperoleh, dapatkan properti `address`, yang merupakan alamat siswa.
+karena kita sudah define setiap student hasOne contact jadi hal dibawah tidak masalah, akan return satu address
+		`$address = Student::find(id)->contact->address;`
+		`return view('example', [`
+			`'address' => $address`
+		`]);`
+	`}`
+`}`
+
+Kesimpulan:
+kita dapat langsung mengakses data pada table contact pada table student yang sesuai dengan id yang ada pada data student.
+
+Contact Table menyimpan atribut id sebagai foreignKey yang berasosiasi dengan atribut id pada Student Table,
+
+Student hasOne Contact (karena student menitipkan id pada Contact sebagai foreignKey)
+Contact belongsTo Student (karena contact menyimpan id milik Student sebagai foreignKey)
 
 ### One to Many
 ### Many to Many
