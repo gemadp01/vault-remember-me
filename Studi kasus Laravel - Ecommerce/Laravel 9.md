@@ -441,7 +441,7 @@ contoh kasus
 membuat migration baru untuk table contacts
 `php artisan make:migration create_contacts_table`
 
-inisialisasi atribut yang diperlukan pada table contacts
+inisialisasi atribut yang diperlukan pada **table contacts**
 `public function up()`
     `{`
         `Schema::create('contacts', function (Blueprint $table) {`
@@ -511,4 +511,95 @@ Student hasOne Contact (karena student menitipkan id pada Contact sebagai foreig
 Contact belongsTo Student (karena contact menyimpan id milik Student sebagai foreignKey)
 
 ### One to Many
+![[Pasted image 20240416210433.png]]
+salah satu table memiliki banyak record dari table lainnya,
+misal pada contoh diatas,
+satu student hanya bisa memiliki satu wali kelas saja,
+satu wali kelas bisa memiliki banyak student
+
+Teacher table
+`public function up()`
+    `{`
+        `Schema::create('teachers', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->string('name');`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+Student Table
+`public function up()`
+    `{`
+        `Schema::create('students', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->foreignId('teacher_id')->constrained('teachers')->cascadeOnUpdate()->cascadeOnDelete();`
+            `$table->string('name');`
+            `$table->integer('score');`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+!ketika melakukan perintah "php artisan migrate" table yang sebelumnya sudah ter-migrate pada saat terjadi pengurangan ataupun pertambahan atribut pada table tersebut tidak akan terkait karena perintah tersebut berlaku hanya untuk table yang belum pernah sama sekali ter-migrate.
+
+untuk mengatasi masalah tersebut kita pakai perintah,
+`php artisan migrate:fresh`
+dengan perintah migrate:fresh laravel akan drop semua table dan menambahkan ulang semua migration table yang ada
+
+!urutan migration sangat berpengaruh ketika melakukan relationships (laravel melakukan migrate secara sequential)
+
+dan
+
+!bisa juga menggunakan outer table dengan migration (selain migrate:fresh)
+
+**Definition**
+`class Teacher extends Model`
+`{`
+    `use HasFactory;`
+
+bedanya one to many dengan one to one ialah
+pada one to many table yang menyimpan foreignKey ditulis dalam model dengan plural
+    `public function students() {`
+        `return $this->hasMany(Student::class);`
+    `}`
+`}`
+
+**Definition Inverse**
+`class Student extends Model`
+`{`
+    `use HasFactory;`
+  
+    `protected $fillable = [`
+        `'name',`
+        `'score',`
+        `'teacher_id'`
+    `];`
+
+    `public function teacher() {`
+        `return $this->belongsTo(Teacher::class);`
+    `}`
+`}`
+
+Mengakses teacher dari salah satu murid
+`class StudentController extends Controller`
+`{`
+	`public function show($id) {`
+		`$name = Student::find(id)->teacher->name;`
+		`return view('example', [`
+			`'name' => $name`
+		`]);`
+	`}`
+`}`
+
+Mengakses Student dari salah satu teacher
+`class StudentController extends Controller`
+`{`
+	`public function show($id) {`
+		`$students = Teacher::find(id)->students;`
+		`return view('example', [`
+			`'students' => $students`
+		`]);`
+	`}`
+`}`
+
+!karena data Students memiliki hanya satu teacher, kita lakukan perulangan dengan foreach
 ### Many to Many
