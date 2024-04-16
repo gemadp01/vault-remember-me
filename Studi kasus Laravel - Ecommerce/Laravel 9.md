@@ -369,7 +369,36 @@ jadi kita passing variable $id kedalam controller yang nantinya ditangkap pada p
 
 
 ## Relations
+Database Relationship ialah sebuah hubungan antar table.
+
+Bagaimana sebuah table dapat berhubungan dengan table lain?
+biasanya table tersebut menyimpan atribut dari table lainnya.
+- Primary key (Atribut unik), Unique identifier of every records in table.
+	id bersifat unique, karena tiap records mempunya id yang berbeda
+- Foreign key, A database key that is used to link two tables together
+	Misal table contact yang dapat dimiliki oleh student, jadi pada table contact menyimpan primary key dari student
+
+**Adding Keys**
+membuat atribut baru, (id pada laravel menggunakan unsignedBigInteger)
+dengan nama 'student_id' (nama bebas)
+$table->unsignedBigInteger('student_id');
+
+menggunakan foreign agar atribut 'student_id' menjadi foreign key -> references ke atribut apa ('id') -> pada table apa ('students')
+$table->foreign('student_id')->references('id')->on('students');
+
+// Shorter way
+cara pendek jika kita mengikuti semua konvensi laravel
+foreignId diikuti nama foreignKey yang akan kita gunakan -> constrained terhadap table yang mana ('students')
+$table->foreignId('student_id')->constrained('students');
+
+**ERD (Entity Relationship Diagram)**
+Diagram yang menggambarkan relasi antar entitas / objek yang akan disimpan di database dan diolah dengan aplikasi / sistem
+
+Entitas -> unit/objek yang mempunyai kepentingan/menjadi bagian dari jalannya sistem
+
+Atribut -> karakteristik/identitas entitas
 ### One to One
+sebuah table dimana setiap table hanya bisa dimiliki salah satu record lainnya
+
 ### One to Many
 ### Many to Many
-4
