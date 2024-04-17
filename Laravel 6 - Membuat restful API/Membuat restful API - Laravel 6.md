@@ -137,6 +137,7 @@ dan memanggilnya pada DatabaseSeeder.php
 
 
 ## Bread Api Endpoint
+Memb
 ### Browse API Endpoint
 ### Read API Endpoint
 ### Add API Endpoint
