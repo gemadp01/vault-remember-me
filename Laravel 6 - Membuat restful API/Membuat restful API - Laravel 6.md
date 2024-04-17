@@ -137,7 +137,57 @@ dan memanggilnya pada DatabaseSeeder.php
 
 
 ## Bread Api Endpoint
-Memb
+Membuat web service
+
+routes -> web.php, biasa digunakan untuk mendeklarasikan endpoint halaman
+
+untuk layanan web service, laravel menyediakan satu file route khusus yaitu api.php
+
+yang membedakan ialah penggunaan dari middleware web dan api pada app -> Http -> Kernel.php 
+
+`protected $middlewareGroups = [`
+        `'web' => [`
+            `\App\Http\Middleware\EncryptCookies::class,`
+            `\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,`
+            `\Illuminate\Session\Middleware\StartSession::class,`
+            `// \Illuminate\Session\Middleware\AuthenticateSession::class,`
+            `\Illuminate\View\Middleware\ShareErrorsFromSession::class,`
+            `\App\Http\Middleware\VerifyCsrfToken::class,`
+            `\Illuminate\Routing\Middleware\SubstituteBindings::class,`
+        `],`
+        pada middleware groups 'web' dan 'api' beda dalam perlakukan
+
+        `'api' => [`
+            `'throttle:60,1',`
+            `'bindings',`
+        `],`
+    `];`
+
+jadi, pada saat membuat url kita gunakan file api.php pada saat mengarahkan pada suatu resource/endpoint yang akan kita gunakan.
+
+hal pertama yang dilakukan
+- menampilkan seluruh data posts, memerlukan suatu controller dan method beserta url untuk memanggil method tersebut
+
+`php artisan make:controller PostController`
+
+pada PostController
+class PostController extends Controller {
+	public function index() 
+	{
+		$data = Post::all(); 
+		mendapatkan semua data pada Post Table.
+		selanjutnya, kita perlu menampilkan response nya (response/data yang dikirimkan web service dengan konsep rest ini bisa dalam format XML, JSON, dll) kita akan tampilkan dalam bentuk JSON,
+		!pada umumnya response pada api sudah berbentuk tipe data json
+
+		return response()->json($data, 200);		
+	}
+}
+
+return dengan memanfaatkan helper response() yang dimiliki laravel, lalu chaining dengan method json(data yang ingin dimunculkan, kode/status HTTP yang kita kirimkan)
+200 yang berarti Response bisa kita jalankan, berhasil menampilkan data dari post tersebut dan response berhasil dijalankan
+
+panggil helper response()->json($data, 200);
+
 ### Browse API Endpoint
 ### Read API Endpoint
 ### Add API Endpoint
