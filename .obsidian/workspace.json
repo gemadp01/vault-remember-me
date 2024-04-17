@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Advanced JavaScript.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Advanced JavaScript.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Advanced JavaScript.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Advanced JavaScript.md"
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md"
               }
             }
           }
@@ -148,8 +148,10 @@
   },
   "active": "da483d48f82fbdc3",
   "lastOpenFiles": [
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Pasted image 20240416225207.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416215717.png",
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Advanced JavaScript.md",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416210433.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416170158.png",
     "Studi kasus Laravel - Ecommerce/E-commerce.md",
@@ -168,7 +170,6 @@
     "Vuejs/Guides (Vue ver 2)/2. Bekerja dengan Template.md",
     "Vuejs/Guides (Vue ver 2)/8. Vue Router.md",
     "Vuejs/Guides (Vue ver 2)/1. Perkenalan Vue.md",
-    "Advanced JavaScript.md",
     "Untitled 1",
     "Vuejs/Guides/6. Implementasi Project dengan vue cli.md",
     "Vuejs/Vue CLI.md",

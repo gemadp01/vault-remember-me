@@ -603,4 +603,105 @@ Mengakses Student dari salah satu teacher
 
 !karena data Students memiliki hanya satu teacher, kita lakukan perulangan dengan foreach
 ### Many to Many
-![[Pasted image 20240416215717.png]]
+![[Pasted image 20240416225207.png]]
+Diantara kedua tabel (Student dan Activity), masing-masing record itu bisa mempunyai hubungan ke record lain dalam jumlah banyak, 
+misal, satu student bisa mengikuti banyak aktivitas disekolahnya
+di aktivitas, dia (activity) bisa mempunyai banyak student untuk mengikutinya
+
+!untuk mewujudkan many to many relationships, kita membutuhkan **pivot table**
+pivot table berisi foreignKey dari kedua table Student dan Activity ini.
+
+jadi, nama table pada pivot table harus sesuai dengan urutan abjad dari masing-masing table, karena "S"tudent dan "A"ctivity urutan abjad didahului oleh "A" maka ditulis "Activity_Student"
+
+Activities Table
+`public function up()`
+    `{`
+        `Schema::create('activities', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->string('name');`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+Pivot table
+`public function up()`
+    `{`
+        `Schema::create('activity_student', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->foreignId('activity_id')->constrained('activities')->cascadeOnUpdate()->cascadeOnDelete();`
+            `$table->foreignId('student_id')->constrained('students')->cascadeOnUpdate()->cascadeOnDelete();`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+Students table
+`public function up()`
+    `{`
+        `Schema::create('students', function (Blueprint $table) {`
+            `$table->id();`
+            `$table->foreignId('teacher_id')->constrained('teachers')->cascadeOnUpdate()->cascadeOnDelete();`
+            `$table->string('name');`
+            `$table->integer('score');`
+            `$table->timestamps();`
+        `});`
+    `}`
+
+Table Structure
+definition
+setiap model belongsToMany model lainnya
+
+untuk inverse
+belongsToMany model lainnya
+
+Activity model
+`class Activity extends Model`
+`{`
+    `use HasFactory;`
+nama method plural karena plural
+    `public function students() {`
+        `return $this->belongsToMany(Student::class);`
+    `}`
+`}`
+
+Student model
+`class Student extends Model`
+`{`
+    `use HasFactory;`
+
+    `protected $fillable = [`
+        `'name',`
+        `'score',`
+        `'teacher_id'`
+    `];`
+nama method plural karena many
+    `public function activities() {`
+        `return $this->belongsToMany(Activity::class);`
+    `}`
+`}`
+
+Mengakses salah satu Activity yang mempunyai students didalamnya
+`class StudentController extends Controller`
+`{`
+	`public function show($id) {`
+		`$activity = Activity::find(id);`
+		`$students = $activity->students;`
+		`return view('example', [`
+			`'activity' => $activity,`
+			`'students' -> $students`
+		`]);`
+	`}`
+`}`
+
+Mengakses salah satu Student yang mempunyai activities didalamnya
+`class StudentController extends Controller`
+`{`
+	`public function show($id) {`
+		`$student = Student::find(id);`
+		`$activities = $student->activities;`
+		`return view('example', [`
+			`'activities' => $activities,`
+			`'student' -> $student`
+		`]);`
+	`}`
+`}`
+## Building Basic CRUD App
