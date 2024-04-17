@@ -133,9 +133,6 @@ dan memanggilnya pada DatabaseSeeder.php
         `// $this->call(UsersTableSeeder::class);`
         `$this->call(DataTableSeeder::class);`
     `}`
-
-
-
 ## Bread Api Endpoint
 Membuat web service
 
@@ -164,7 +161,7 @@ yang membedakan ialah penggunaan dari middleware web dan api pada app -> Http ->
     `];`
 
 jadi, pada saat membuat url kita gunakan file api.php pada saat mengarahkan pada suatu resource/endpoint yang akan kita gunakan.
-
+### Browse API Endpoint
 hal pertama yang dilakukan
 - menampilkan seluruh data posts, memerlukan suatu controller dan method beserta url untuk memanggil method tersebut
 
@@ -188,8 +185,83 @@ return dengan memanfaatkan helper response() yang dimiliki laravel, lalu chainin
 
 panggil helper response()->json($data, 200);
 
-### Browse API Endpoint
+untuk melihat response api/andpoint dari api
+
+tambahkan syntax untuk endpoint pada api.php, agar dapat mengakses apa yang sudah di set pada controller sebelumnya
+`Route::get('/post', 'PostController@index');`
+
+!perbedaan lagi web.php dan api.php,
+kita perlu tambahkan prefix /api/
+
+localhost/api/post
+yang tampil ialah data berbentuk json dari Post table (karena sebelumnya kita set json()), yang berarti berhasil menampilkan data.
+
+untuk melihat informasi tambahan, klik kanan -> inspect -> tab 'Network'
+post -> Headers dan Response
+
+mengirimkan data untuk proses post, put, delete dengan menggunakan,
+software postman, untuk mengetes api endpoint yang dibuat (tanpa membuat view)
+
+tambahkan http method dan endpoint yang ingin dilakukan pengecekan
+!tersedia tab params, Authorization, Headers, Body, Pre-request script, Test, Settings
+
+pada headers, tambahkan Key Accept, dan value application/json (data yang diharapkan) -> Send request
+
+(evaluasi pada akhir timestamps)
+
 ### Read API Endpoint
+Mengambil suatu data sebagai object
+
+membuat endpoint baru hanya untuk menampilkan satu data/detail data
+`Route::get('/post/{id}', 'PostController@show');`
+
+`public function show($id)`
+    `{`
+        `data = Post::find($id);`
+        `return response()->json($data, 200);`
+    `}`
+
+endpoint pada postman
+http://localhost/api/post/{$id}
+dan set headers key Accept dan value application/json
+
+!id disesuaikan dengan data yang dihasilkan pada json get 
+
+http://localhost/api/post/4
+
+maka data yang tampil akan otomatis sesuai dengan id yang tertulis pada uri
+
+(evaluasi pada akhir timestamps)
 ### Add API Endpoint
+
+`public function store(Request $request)`
+    `{`
+        `$data = $request->all();`
+        `response = Post::create(data);`
+        `return response()->json($response, 201);`
+
+    `}`
+
+`Route::post('/post', 'PostController@store');`
+
+(evaluasi pada akhir timestamps)
+
 ### Edit API Endpoint
+`public function update(Request $request, Post $post)`
+    `{`
+        `post->update(request->all());`
+        `return response()->json($post, 200);`
+    `}`
+
+`Route::put('/post/{post}', 'PostController@update');`
+
+(evaluasi pada akhir timestamps)
+
 ### Delete API Endpoint
+`public function destroy(Post $post)`
+    `{`
+        `$post->delete();`
+        `return response()->json(null, 200);`
+    `}`
+
+`Route::delete('/post/{post}', 'PostController@destroy');`
