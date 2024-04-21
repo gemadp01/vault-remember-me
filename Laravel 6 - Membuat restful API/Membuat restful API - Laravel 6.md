@@ -116,7 +116,7 @@ UserFactory
 
 proses mengenerate data dummy
 
-membuat kelas seed DataTableSeeder.php
+membuat syntax baru pada kelas seed DataTableSeeder.php (untuk memanggil )
 `class DataTableSeeder extends Seeder`
 `{`
     `public function run()`
