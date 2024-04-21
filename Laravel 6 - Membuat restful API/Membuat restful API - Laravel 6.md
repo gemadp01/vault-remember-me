@@ -48,9 +48,12 @@ perbedaan konsep rest dan web service lainnya,
 Laravel secara default menggunakan konsep rest
 
 ### Persiapan Project
-- sudah membuat model
+- sudah membuat model ()
 - design database
-- sudah merealisasikannya
+- sudah merealisasikannya (User, Post, Comment)
+	- User boleh memiliki banyak post, post tersebut hanya terikat satu user
+	- Post terikat pada user dan pada post boleh memiliki banyak comment
+	- Comment hanya terdapat per post dan boleh banyak user
 - seeder database
 
 `git clone https://github.com/idstck/laravel-restapi/`
