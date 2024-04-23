@@ -137,91 +137,6 @@ dan memanggilnya pada DatabaseSeeder.php
         `$this->call(DataTableSeeder::class);`
     `}`
 ## Bread Api Endpoint
-didalam konsep rest api atau membuat web service terdapat API Authentication yang berfungsi untuk menjaga resource kita tetap aman, kita juga dapat mengidentifikasi siapa saja yang melakukan request dan kita juga bisa menghemat resource atau menentukan scope apa saja yang dapat diakses suatu client/user
-
-didalam laravel sudah menyediakan konsep authentication didalam web service-nya, kita akan menggunakan token base/API authentication
-
-**step by step,**
-- menambahkan kolom baru didalam table user (satu kolom), bertipe data string yang bernama api_token sudah ditentukan untuk menyimpan/acuan string unique yang akan kita gunakan (harus menggunakan kolom yang sama)
-- ketika sudah mengenerate dari API token ini, kita dapat mengamankan suatu api endpoint dengan menggunakan middleware auth:api (laravel 6) !pada laravel versi selanjutnya menggunakan sanctum
-
-laravel 6
-`Route::middleware('auth:api')->get('/user', function (Request $request) {`
-    `return $request->user();`
-`});`
-
-next laravel
-`Route::middleware('auth:sanctum')->get('/user', function (Request $request) {`
-    `return $request->user();`
-`});`
-
-memproteksi sebuah routes dengan middleware auth:api/auth:sanctum, atau middleware tersebut bisa kita tambahkan kedalam sebuah controller yang ingin dikenakan securitynya
-
-teknis,
-- membuat column baru api_token kedalam table users
-`php artisan make:migration add_api_token_column_to_users_table`
-*membuat kelas dengan skema yang sudah ditentukan untuk membuat kolom baru didalam migrationnya, ini dilakukan oleh laravel pada saat mengecek terdapat nama dengan format api_token*
-
-copy paste sesuai database preparation pada laravel 
-`public function up()`
-    `{`
-        `Schema::table('users', function (Blueprint $table) {`
-            `$table->string('api_token', 80)->after('password')`
-                        `->unique()`
-                        `->nullable()`
-                        `->default(null);`
-        `});`
-    `}`
-
-ketika melakukan rollback kita hapus juga column api_token
-`public function down()`
-    `{`
-        `Schema::table('users', function (Blueprint $table) {`
-            `$table->dropColumn('api_token');`
-        `});`
-    `}`
-
-- mengubah factory untuk mengenerate tokennya agar bisa langsung digunakan
-menambah index baru pada UserFactory.php
-`'api_token' => Str::random(80),`
-sesuai dengan panjang yang ada pada migration
-dan jika membuat halaman register tambahkan juga index array untuk api_token seperti diatas
-
-kemudian php artisan migrate:fresh --seed
-
-**Bagaimana cara proteksinya?**
-kita inginkan pada saat mengakses kedalam api dari PostController yaitu harus user yang sudah ter-registrasi atau sudah memiliki token baru dapat mengakses api endpoint PostController
-
-- panggil middleware kedalam __construct (method yang akan dieksesuki ketika kita memanggil kelas PostController)
-`public function __construct() {`
-middleware auth dengan jenis api
-	`$this->middleware('auth:api');`
-jadi pada saat akan memanggil api endpoint apapun pada method didalam kelas (PostController) harus menyertakan api_token
-`}`
-
-`public function __construct() {`
-	`$this->middleware('auth:sanctum');`
-`}`
-
-pengetesan pada postman
-url http://localhost:8000/api/post dengan http method get,
-pada headers tambahkan key: Accept dengan Value: application/json kemudian send,
-yang terjadi ialah error
-`{`
-    `"message": "Unauthenticated."`
-    "Client yang melakukan request didalam api endpoint tersebut sudah mengimplementasikan middleware api auth harus menyertakan api_token"
-`}`
-
-dalam postman kita dapat memanfaatkan tab "Authorization" dan pilih type nya ialah "Bearer Token", pada kolom Token isi string/kode unique yang kita generate disimpan dikolom tersebut, untuk bisa mengakses api endpoint yang menggunakan middleware auth:api,
-
-token didapatkan dari dengan memanfaat dari table user pada database pada kolom api_token copy dan paste pada kolom Token (Bearer Token)
-
-kita dapat langsung cek, Send maka data akan didapatkan/diakses karena sudah menyertakan token,
-hal ini dapat membantu kita pada saat melakukan create data post tanpa perlu menyertakan id dari user_id nya, karena jika kita lihat didalam database pada table posts kita perlu menyertakan kolom user_id pada saat membuat data posts,
-
-karena sudah menggunakan token, token tersebut sudah mewakili data usernya.
-
-
 Membuat web service
 
 routes -> web.php, biasa digunakan untuk mendeklarasikan endpoint halaman
@@ -353,3 +268,97 @@ maka data yang tampil akan otomatis sesuai dengan id yang tertulis pada uri
     `}`
 
 `Route::delete('/post/{post}', 'PostController@destroy');`
+
+## Error Handling and Exception
+### Custom Response untuk Data tidak ditemukan
+### Menambahkan Validasi beserta Responsenya
+## Api Resource
+### Membuat Custom Response
+### Menggunakan Resource Collection
+### Membuat Response Pagination
+### Memuat Data Berelasi di API Resource
+## Authentication
+### Menggunakan API Authentication
+didalam konsep rest api atau membuat web service terdapat API Authentication yang berfungsi untuk menjaga resource kita tetap aman, kita juga dapat mengidentifikasi siapa saja yang melakukan request dan kita juga bisa menghemat resource atau menentukan scope apa saja yang dapat diakses suatu client/user
+
+didalam laravel sudah menyediakan konsep authentication didalam web service-nya, kita akan menggunakan token base/API authentication
+
+**step by step,**
+- menambahkan kolom baru didalam table user (satu kolom), bertipe data string yang bernama api_token sudah ditentukan untuk menyimpan/acuan string unique yang akan kita gunakan (harus menggunakan kolom yang sama)
+- ketika sudah mengenerate dari API token ini, kita dapat mengamankan suatu api endpoint dengan menggunakan middleware auth:api (laravel 6) !pada laravel versi selanjutnya menggunakan sanctum
+
+laravel 6
+`Route::middleware('auth:api')->get('/user', function (Request $request) {`
+    `return $request->user();`
+`});`
+
+next laravel
+`Route::middleware('auth:sanctum')->get('/user', function (Request $request) {`
+    `return $request->user();`
+`});`
+
+memproteksi sebuah routes dengan middleware auth:api/auth:sanctum, atau middleware tersebut bisa kita tambahkan kedalam sebuah controller yang ingin dikenakan securitynya
+
+teknis,
+- membuat column baru api_token kedalam table users
+`php artisan make:migration add_api_token_column_to_users_table`
+*membuat kelas dengan skema yang sudah ditentukan untuk membuat kolom baru didalam migrationnya, ini dilakukan oleh laravel pada saat mengecek terdapat nama dengan format api_token*
+
+copy paste sesuai database preparation pada laravel 
+`public function up()`
+    `{`
+        `Schema::table('users', function (Blueprint $table) {`
+            `$table->string('api_token', 80)->after('password')`
+                        `->unique()`
+                        `->nullable()`
+                        `->default(null);`
+        `});`
+    `}`
+
+ketika melakukan rollback kita hapus juga column api_token
+`public function down()`
+    `{`
+        `Schema::table('users', function (Blueprint $table) {`
+            `$table->dropColumn('api_token');`
+        `});`
+    `}`
+
+- mengubah factory untuk mengenerate tokennya agar bisa langsung digunakan
+menambah index baru pada UserFactory.php
+`'api_token' => Str::random(80),`
+sesuai dengan panjang yang ada pada migration
+dan jika membuat halaman register tambahkan juga index array untuk api_token seperti diatas
+
+kemudian php artisan migrate:fresh --seed
+
+**Bagaimana cara proteksinya?**
+kita inginkan pada saat mengakses kedalam api dari PostController yaitu harus user yang sudah ter-registrasi atau sudah memiliki token baru dapat mengakses api endpoint PostController
+
+- panggil middleware kedalam __construct (method yang akan dieksesuki ketika kita memanggil kelas PostController)
+`public function __construct() {`
+middleware auth dengan jenis api
+	`$this->middleware('auth:api');`
+jadi pada saat akan memanggil api endpoint apapun pada method didalam kelas (PostController) harus menyertakan api_token
+`}`
+
+`public function __construct() {`
+	`$this->middleware('auth:sanctum');`
+`}`
+
+pengetesan pada postman
+url http://localhost:8000/api/post dengan http method get,
+pada headers tambahkan key: Accept dengan Value: application/json kemudian send,
+yang terjadi ialah error
+`{`
+    `"message": "Unauthenticated."`
+    "Client yang melakukan request didalam api endpoint tersebut sudah mengimplementasikan middleware api auth harus menyertakan api_token"
+`}`
+
+dalam postman kita dapat memanfaatkan tab "Authorization" dan pilih type nya ialah "Bearer Token", pada kolom Token isi string/kode unique yang kita generate disimpan dikolom tersebut, untuk bisa mengakses api endpoint yang menggunakan middleware auth:api,
+
+token didapatkan dari dengan memanfaat dari table user pada database pada kolom api_token copy dan paste pada kolom Token (Bearer Token)
+
+kita dapat langsung cek, Send maka data akan didapatkan/diakses karena sudah menyertakan token,
+hal ini dapat membantu kita pada saat melakukan create data post tanpa perlu menyertakan id dari user_id nya, karena jika kita lihat didalam database pada table posts kita perlu menyertakan kolom user_id pada saat membuat data posts,
+
+karena sudah menggunakan token, token tersebut sudah mewakili data usernya.
