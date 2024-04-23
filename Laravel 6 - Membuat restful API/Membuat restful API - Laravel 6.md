@@ -354,16 +354,51 @@ dan mengupdate data pada method didalam PostController dengan eloquent model den
 
 !bisa juga memanfaatkan route model binding pada method show tanpa melakukan query karena secara otomatis mendapatkan object sesuai dengan primary key yang dikirimkan pada api endpoint dengan syarat uri harus menggunakan nama yang sama dengan type hint yang diberikan pada parameter/closure pada method tersebut
 ### Delete API Endpoint
+HTTP Method delete, berfungsi untuk menghapus sebuah resource
+
+
 `public function destroy(Post $post)`
     `{`
         `$post->delete();`
+untuk menghapus suatu resource didalam laravel pada object eloquent, dapat memanggil method delete();
         `return response()->json(null, 200);`
     `}`
 
+api endpoint/resource nya
 `Route::delete('/post/{post}', 'PostController@destroy');`
 
+pada postman,
+HTTP Method delete -> localhost:8000/api/post/21
+Headers seperti biasa Accept n application json
+body kosong
+Send Request
+
+mengembalikkan response kosong (karena return kita null)
+dengan status 200 OK yang mana eksekusi berhasil
+
+!jika kita paksakan send request pada id yang sama (yang sudah didelete) yang terjadi akan menampilkan json yang berbeda/property
+key "Accept" n "application/json" -> hanya menerima response json saja (menerima data dengan tipe json)
+Status 404 Not Found -> resource yang kita cari tidak ada
+
+selanjutnya ialah mengubah response yang diberikan laravel agar lebih rapih (handle error untuk mudah dibaca)
 ## Error Handling and Exception
 ### Custom Response untuk Data tidak ditemukan
+menampilkan response yang lebih sederhana/pesan error yang dapat digunakan oleh client.
+
+`public function show($id)`
+    `{`
+        `data = Post::find(id);`
+
+        `if (is_null($data)) {`
+            `return response()->json(`
+                `'message' => 'Resource not found!'`
+            `], 404);`
+        `}`
+ketika kita mengakses data dengan id yang tidak ada, yang tampil ialah message dengan value 'Resource not found!' dengan status code 404 Not Found
+        `return response()->json(new PostResource($data), 200);`
+    `}`
+
+dapat mengkondisikan suatu fungsi dimana contohnya ketika kita tidak menemukan resource yang kita cari, kita harus memberikan response yang informatif  salah satunya dengan membuat custom response
 ### Menambahkan Validasi beserta Responsenya
 ## Api Resource
 ### Membuat Custom Response
