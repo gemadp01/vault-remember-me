@@ -227,20 +227,30 @@ kesimpulan
 membuat api endpoint pertama
 
 ### Read API Endpoint
-Mengambil suatu data sebagai object yang ada didalam model post
+Mengambil suatu data tertentu sebagai object yang ada didalam model post
 
-membuat endpoint baru hanya untuk menampilkan satu data/detail data
-`Route::get('/post/{id}', 'PostController@show');`
+- membuat endpoint baru hanya untuk menampilkan satu data/detail data dari kelas post, pada layanan rest api kita perlu menampilkan satu buah data saja dari sekumpulan data sebelumnya
 
+menambah method baru pada PostController
 `public function show($id)`
+kita akan fungsikan method show, untuk menampilkan satu data saja berdasarkan parameter $id (primary key), akan kita gunakan parameter tersebut untuk menjadi data berdasarkan id yang kita pilih
     `{`
-        `data = Post::find($id);`
+    memanfaatkan method find() dari eloquent ORM, berdasarkan id para parameter
+        `$data = Post::find($id);`
         `return response()->json($data, 200);`
     `}`
 
-endpoint pada postman
+- membuat uri untuk mengarahkan pada method show($id)
+`Route::get('/post/{id}', 'PostController@show');`
+
+
+- mengisikan nilai dari parameter /post/{id}
+api endpoint pada postman
 http://localhost/api/post/{$id}
-dan set headers key Accept dan value application/json
+
+tambahkan value dari id data pada table post kedalam parameter pada uri
+HTTP Method GET -> localhost:8000/api/post/1
+dan set request headers key "Accept" dan value "application/json"
 
 !id disesuaikan dengan data yang dihasilkan pada json get 
 
@@ -248,21 +258,46 @@ http://localhost/api/post/4
 
 maka data yang tampil akan otomatis sesuai dengan id yang tertulis pada uri
 
-(evaluasi pada akhir timestamps)
+bedanya api endpoint pertama (get all data) dan api end point kedua (get detail data)
+- pertama, menampilkan semua data post kedalam json (array dengan value objek)
+- kedua, menampilkan satu data post (objek)
+
 ### Add API Endpoint
+menambahkan suatu data kedalam model post sekaligus mempraktekkan HTTP method selain GET pada implementasi web service rest api 
+
+- menyiapkan method untuk melakukan proses create, yang mana akan menyimpan data yang dikirimkan oleh client atau melalui apk postman dan data tersebut kita simpan kedalam database
 
 `public function store(Request $request)`
+untuk mempermudah data request/data yang dikirimkan oleh client,
+kita inject Class Request dan kita masukkan kedalam variabel $request (agar dapat dipanggil objeknya)
     `{`
+    mendapatkan seluruh data yang dikirimkan user
         `$data = $request->all();`
-        `response = Post::create(data);`
+        `$response = Post::create(data);`
+klasifikasi code dari response sesuai dengan status code
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
         `return response()->json($response, 201);`
 
     `}`
 
+- membuat uri dengan HTTP method POST karena kita tidak memerlukan parameter apapun tetapi data yang kita kirimkan kita harus simpan pada **body payload** (bukan pada params uri)
 `Route::post('/post', 'PostController@store');`
 
-(evaluasi pada akhir timestamps)
+pada postman
+1. HTTP Method POST - localhost:8000/api/post
+2. Request Headers seperti biasa "Accept" n "application/json" dan juga "Content-Type" n application/json (content-type yang akan kita kirimpan ingin berupa apa?)
+3. inputan kita simpan di Body payload dengan tipe raw dengan beautification nya JSON
+4. untuk data yang diinputkan sesuaikan dengan struktur data pada tabel post
+user_id - title - body
+	- untuk user_id kita inputkan secara manual sesuai dengan user yang tersedia (untuk sementara)
 
+`{`
+    `"user_id": 1,`
+    `"title": "This is the first post from API",`
+    `"body": "This is the content of first post from API"`
+`}`
+
+maka akan tampil return response() berupa data $response yang di buat kedalam database dan status, time, size
 ### Edit API Endpoint
 `public function update(Request $request, Post $post)`
     `{`
