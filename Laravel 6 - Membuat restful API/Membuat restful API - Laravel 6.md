@@ -299,16 +299,60 @@ user_id - title - body
 
 maka akan tampil return response() berupa data $response yang di buat kedalam database dan status, time, size
 ### Edit API Endpoint
+Mengubah data pada database menggunakan HTTP Method put (sebetulnya bisa patch juga untuk sebagian atribut saja yang diubah)
+
+- Membuat method baru pada PostController
 `public function update(Request $request, Post $post)`
+menangkap data yang dikirim kan oleh client pada (**parameter pertama**),
+untuk menentukan object/resource mana yang akan kita ubah, kita memanfaatkan fitur route model binding jadi pada saat kita akan mengirim kan primary key pada client maka didalam laravel akan diterjemahkan sebagai object (tanpa query) otomatis mendapatkan datanya (**parameter kedua**)
     `{`
-        `post->update(request->all());`
         `return response()->json($post, 200);`
     `}`
 
+api endpoint dan untuk parameter disesuaikan dengan nama model yang kita berikan pada parameter kedua (disamakan)
+!itu merupakan syarat menggunakan route model binding
 `Route::put('/post/{post}', 'PostController@update');`
 
-(evaluasi pada akhir timestamps)
+pada postman
+localhost:8000/api/post/{post}
+HTTP Method put -> localhost:8000/api/post/2
+!id 2 (karena kita butuhkan primary key dari field pada tabel post)
+Headers seperti biasa "Accept" n "application/json"
 
+data pada Body sementara dikosongkan terlebih dahulu, karena kita akan mencoba melihat proses route model binding -> Send Request
+
+maka yang muncul akan sesuai dengan data pada id yang dikirimkan (yang mana kita tidak melakukan query apapun tetapi hanya return saja pada method)
+
+=="Laravel automatically resolves Eloquent models defined in routes or controller actions whose type-hinted variable names match a route segment name."==
+https://laravel.com/docs/11.x/routing#route-model-binding
+
+`use App\Models\User;`
+`Route::get('/users/{user}', function (User $user) {`
+`return $user->email;`
+`});`
+
+=="Since the `$user` variable is type-hinted as the `App\Models\User` Eloquent model and the variable name matches the `{user}` URI segment, Laravel will automatically inject the model instance that has an ID matching the corresponding value from the request URI. If a matching model instance is not found in the database, a 404 HTTP response will automatically be generated."==
+
+`public function update(Request $request, Post $post) {`
+	`$post->update(request->all());`
+	`return response()->json($post, 200);`
+`}`
+
+HTTP Method put -> localhost:8000/api/post/21
+Content-Type "application/json" dan Accept "application/json"
+payload body
+`{`
+    `"user_id": 1,`
+    `"title": "This is the first update from API 1",`
+    `"body": "This is the content of first update from API 1"`
+`}`
+
+kesimpulan
+berhasil mengupdate suatu resource yang sudah ada dengan HTTP method PUT
+dengan mengirimkan pada payload body
+dan mengupdate data pada method didalam PostController dengan eloquent model dengan memanfaatkan route model biding
+
+!bisa juga memanfaatkan route model binding pada method show tanpa melakukan query karena secara otomatis mendapatkan object sesuai dengan primary key yang dikirimkan pada api endpoint dengan syarat uri harus menggunakan nama yang sama dengan type hint yang diberikan pada parameter/closure pada method tersebut
 ### Delete API Endpoint
 `public function destroy(Post $post)`
     `{`
