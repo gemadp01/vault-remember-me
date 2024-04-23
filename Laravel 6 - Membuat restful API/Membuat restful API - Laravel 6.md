@@ -218,12 +218,16 @@ pada headers, kita tentukan Key "Accept", dan value "application/json" (data yan
 !hasilnya akan sama saja seperti pada pengecekan data langsung pada browser
 
 setelah send request terdapat informasi lainnya,
-tab "Body" didalamnya terdapaat
+tab "Body" didalamnya terdapat -> memiliki response dari data post
+Status code, time, size (datanya)
+dan memberikan format data yang ingin ditampilkan
+dan informasi Headers (response Headers)
 
-(evaluasi pada akhir timestamps)
+kesimpulan
+membuat api endpoint pertama
 
 ### Read API Endpoint
-Mengambil suatu data sebagai object
+Mengambil suatu data sebagai object yang ada didalam model post
 
 membuat endpoint baru hanya untuk menampilkan satu data/detail data
 `Route::get('/post/{id}', 'PostController@show');`
