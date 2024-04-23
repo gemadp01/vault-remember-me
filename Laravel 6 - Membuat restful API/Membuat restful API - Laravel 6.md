@@ -137,7 +137,8 @@ dan memanggilnya pada DatabaseSeeder.php
         `$this->call(DataTableSeeder::class);`
     `}`
 ## Bread Api Endpoint
-Membuat web service
+### Browse API Endpoint
+Membuat web service dengan laravel
 
 routes -> web.php, biasa digunakan untuk mendeklarasikan endpoint halaman
 
@@ -155,7 +156,7 @@ yang membedakan ialah penggunaan dari middleware web dan api pada app -> Http ->
             `\App\Http\Middleware\VerifyCsrfToken::class,`
             `\Illuminate\Routing\Middleware\SubstituteBindings::class,`
         `],`
-        pada middleware groups 'web' dan 'api' beda dalam perlakukan
+        pada middleware groups 'web' dan 'api' beda dalam memperlakukan keduanya
 
         `'api' => [`
             `'throttle:60,1',`
@@ -164,9 +165,9 @@ yang membedakan ialah penggunaan dari middleware web dan api pada app -> Http ->
     `];`
 
 jadi, pada saat membuat url kita gunakan file api.php pada saat mengarahkan pada suatu resource/endpoint yang akan kita gunakan.
-### Browse API Endpoint
+
 hal pertama yang dilakukan
-- menampilkan seluruh data posts, memerlukan suatu controller dan method beserta url untuk memanggil method tersebut
+- menampilkan seluruh data pada tabel posts, memerlukan suatu controller dan method beserta url untuk memanggil method tersebut
 
 `php artisan make:controller PostController`
 
@@ -176,39 +177,48 @@ class PostController extends Controller {
 	{
 		$data = Post::all(); 
 		mendapatkan semua data pada Post Table.
-		selanjutnya, kita perlu menampilkan response nya (response/data yang dikirimkan web service dengan konsep rest ini bisa dalam format XML, JSON, dll) kita akan tampilkan dalam bentuk JSON,
-		!pada umumnya response pada api sudah berbentuk tipe data json
 
-		return response()->json($data, 200);		
+		return response()->json($data, 200);
+selanjutnya, kita perlu menampilkan response nya (response/data yang dikirimkan web service dengan konsep rest ini bisa dalam format XML, JSON, plaintext, dll) kita akan tampilkan dalam bentuk JSON,
+!pada umumnya response pada api sudah berbentuk tipe data json
 	}
 }
 
-return dengan memanfaatkan helper response() yang dimiliki laravel, lalu chaining dengan method json(data yang ingin dimunculkan, kode/status HTTP yang kita kirimkan)
+return dengan memanfaatkan helper response() (helper laravel) yang dimiliki laravel, lalu chaining dengan method json(p1-data yang ingin dimunculkan, p2-kode/status HTTP yang kita kirimkan)
 200 yang berarti Response bisa kita jalankan, berhasil menampilkan data dari post tersebut dan response berhasil dijalankan
 
 panggil helper response()->json($data, 200);
 
-untuk melihat response api/andpoint dari api
-
-tambahkan syntax untuk endpoint pada api.php, agar dapat mengakses apa yang sudah di set pada controller sebelumnya
+untuk melihat response api/endpoint dari api
+- tambahkan syntax untuk endpoint pada api.php, agar dapat mengakses apa yang sudah di set pada controller sebelumnya
 `Route::get('/post', 'PostController@index');`
+- !perbedaan lagi web.php dan api.php, kita perlu tambahkan prefix /api/
 
-!perbedaan lagi web.php dan api.php,
-kita perlu tambahkan prefix /api/
+`localhost:8000/api/post`
+yang tampil ialah data berbentuk json dari Post table (karena sebelumnya kita set json()), yang berarti berhasil menampilkan data dari method pada PostController yaitu index().
 
-localhost/api/post
-yang tampil ialah data berbentuk json dari Post table (karena sebelumnya kita set json()), yang berarti berhasil menampilkan data.
-
-untuk melihat informasi tambahan, klik kanan -> inspect -> tab 'Network'
+didalam browser hanya menampilkan data json, kita tidak bisa dengan mengubah melihat response dari header maupun bagian payload lainnya melainkan kita perlu membuka inspect browser untuk melihat informasi tambahan, klik kanan -> inspect -> tab 'Network'
 post -> Headers dan Response
 
-mengirimkan data untuk proses post, put, delete dengan menggunakan,
-software postman, untuk mengetes api endpoint yang dibuat (tanpa membuat view)
+Post -> Status 200 -> Type Document dll
+double klik pada data Post untuk melihat request header, response header dll
 
+mungkin akan sedikit kerepotan pada saat perlu mengirimkan suatu data dengan http method post dll, jika pada halaman browser kita harus membuat form dan karena didalam aplikasi berbasis web kita hanya membuat web service saja (tidak dengan view nya),
+mengirimkan data untuk proses post, put, delete dengan menggunakan tool,
+software postman, untuk mengetes api endpoint yang kita dibuat (tanpa membuat view)
+
+tampilan sama halnya seperti browser,
 tambahkan http method dan endpoint yang ingin dilakukan pengecekan
-!tersedia tab params, Authorization, Headers, Body, Pre-request script, Test, Settings
+!tersedia tab params, Authorization, Headers, Body, Pre-request script, Test, Settings, ataupun beberapa payload lainnya,
+dengan mudah tanpa perlu membuat halaman form (view)
 
-pada headers, tambahkan Key Accept, dan value application/json (data yang diharapkan) -> Send request
+HTTP Method GET - localhost:8000/api/post (url ini disebut api endpoint)
+yang kita harapkan ialah response tipe json
+pada headers, kita tentukan Key "Accept", dan value "application/json" (data yang diharapkan) -> Send request (untuk mengirimkan request pada api endpoint tersebut),
+!hasilnya akan sama saja seperti pada pengecekan data langsung pada browser
+
+setelah send request terdapat informasi lainnya,
+tab "Body" didalamnya terdapaat
 
 (evaluasi pada akhir timestamps)
 
