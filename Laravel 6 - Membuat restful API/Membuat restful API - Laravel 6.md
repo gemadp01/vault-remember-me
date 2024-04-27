@@ -400,6 +400,12 @@ ketika kita mengakses data dengan id yang tidak ada, yang tampil ialah message d
 
 dapat mengkondisikan suatu fungsi dimana contohnya ketika kita tidak menemukan resource yang kita cari, kita harus memberikan response yang informatif  salah satunya dengan membuat custom response
 ### Menambahkan Validasi beserta Responsenya
+Fitur unggulan,
+Validator(), berfungsi untuk mem-validasi setiap request yang dikirimkan melalui web service/api endpoint yang kita bangun. 
+
+Contohnya, pada saat kita akan menambahkan data post kita harus menentukan panjang dari title/title tidak boleh kosong (seperti yang kita tentukan dalam kolom body) pada saat request tersebut tidak memenuhi syarat kita harus kirimkan response sesuai dengan pesan error sesuai dengan parameter/data yang diperlukan (contohnya title/body tidak boleh kosong)
+
+!Laravel menyediakan pesan error tersebut sesuai dengan validator yang kita definisikan
 ## Api Resource
 ### Membuat Custom Response
 ### Menggunakan Resource Collection
