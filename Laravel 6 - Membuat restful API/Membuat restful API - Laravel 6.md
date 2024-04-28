@@ -403,11 +403,75 @@ dapat mengkondisikan suatu fungsi dimana contohnya ketika kita tidak menemukan r
 Fitur unggulan,
 Validator(), berfungsi untuk mem-validasi setiap request yang dikirimkan melalui web service/api endpoint yang kita bangun. 
 
-Contohnya, pada saat kita akan menambahkan data post kita harus menentukan panjang dari title/title tidak boleh kosong (seperti yang kita tentukan dalam kolom body) pada saat request tersebut tidak memenuhi syarat kita harus kirimkan response sesuai dengan pesan error sesuai dengan parameter/data yang diperlukan (contohnya title/body tidak boleh kosong)
+Contohnya, pada saat kita akan menambahkan data post kita harus menentukan panjang dari title/title tidak boleh kosong (seperti yang kita tentukan dalam kolom body harus diisi dan tidak boleh kosong) pada saat request tersebut tidak memenuhi syarat kita harus mengirimkan response sesuai dengan pesan error sesuai dengan parameter/data yang diperlukan (contohnya title/body tidak boleh kosong, minimal nilainya)
 
-!Laravel menyediakan pesan error tersebut sesuai dengan validator yang kita definisikan
+!Laravel menyediakan **pesan error** tersebut sesuai dengan **validator** yang kita deklarasikan
+
+sebelum create kita melakukan proses create data,
+kita buat validator/pemeriksaan terlebih dahulu
+
+Illuminate/Support/Facedes
+
+`$data = $request->all();`
+
+
+`Validator::make($data, [`
+	`'title' => ['required', 'min:5']`
+`]);`
+panggil static method make() -> membutuhkan 2 parameter,
+- parameter pertama, data dari requestnya
+- parameter kedua, rules yang perlu kita berikan
+
+Validator dapat dicek/outputnya bisa memiliki boolean pada saat memanggil method fails()
+`$validator = Validator::make($data,` 
+	`'title' => ['required', 'min:5']`
+`]);`
+
+melakukan pengecekan pada variabel $validator,
+
+jika $validator bernilai true/terjadi suatu error (pada saat validasi)
+`if($validator->fails()) {`
+maka kita akan menampilkan suatu response berupa tipe data json,
+kita masukkan kedalam key 'error' yang didapat dari object $validator dengan memanggil method errors (method yang dimiliki validator) otomatis memiliki pesan error
+	`return response()->json([`
+		`'error' => $validator->errors()`
+		400, status code bad request
+	`], 400);`
+`}`
+
+setelahnya
+`response = Post::create(data);`
+`return response()->json($response,201);`
+
+melakukan pengecekan pada postman
+HTTP Method post -> http://localhost:8000/api/post
+pada payload Body -> raw -> property 'title' hapus -> Send Request
+
+
+yang terjadi pesan error akan dimunculkan
+`{`
+    `"error": {`
+    field 'title'
+        `"title": [`
+        'message'
+            `"The title field is required."`
+        `]`
+    `}`
+`}`
+
+response tersebut sudah dihandle oleh method errors() dari object Validator
+
+!proses Validator bisa kita manfaatkan untuk memberi batasan/mode strict pada setiap api endpoint,
+jika memang kita perlu parameter kita harus memaksa client untuk mengirimkan parameter, jika parameter tidak ada kita harus beri response yang informatif agar client tidak kebingungan
 ## Api Resource
 ### Membuat Custom Response
+recap:
+- menampilkan suatu response dari resource tertentu
+- menentukan urlnya
+- sudah membuat method didalam controller
+- memanfaatkan data didalam controller
+
+tapi ketika ingin melihat salah satu data pada model Post
 ### Menggunakan Resource Collection
 ### Membuat Response Pagination
 ### Memuat Data Berelasi di API Resource
