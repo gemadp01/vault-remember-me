@@ -471,7 +471,15 @@ recap:
 - sudah membuat method didalam controller
 - memanfaatkan data didalam controller
 
-tapi ketika ingin melihat salah satu data pada model Post
+tapi ketika ingin melihat salah satu data pada table Post, mungkin kita akan menyembunyikan beberapa data,
+`{`
+    `"id": 21,`
+    `"user_id": 1,`
+    `"title": "title-example",`
+    `"body": "body-example",`
+    `"created_at": "2024-04-28T04:53:00.000000Z",`
+    `"updated_at": "2024-04-28T04:53:00.000000Z"`
+`}`
 ### Menggunakan Resource Collection
 ### Membuat Response Pagination
 ### Memuat Data Berelasi di API Resource
