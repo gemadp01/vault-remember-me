@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1e0199528e40d68a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "postgresql/error.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "postgresql/error.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "postgresql/error.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md"
+                "file": "postgresql/error.md"
               }
             }
           }
@@ -159,13 +146,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1e0199528e40d68a",
+  "active": "ca1bfa133f3795e0",
   "lastOpenFiles": [
-    "postgresql/error.md",
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+    "postgresql/error.md",
     "Untitled",
     "postgresql",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Laravel 6 - Membuat restful API",
     "Pasted image 20240416225207.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416215717.png",
