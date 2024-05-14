@@ -72,7 +72,7 @@ kita tidak perlu membuat file tailwind, karena tailwind sudah bisa men-generate 
 
 {name}.css berisi @tailwind base; @tailwind components; @tailwind utilities;
 file tailwind.css -> berisi directives -> file tersebut dicompile (sama halnya cara kerja sass, less, stylus, postcss karena tailwind menggunakan postcss untuk memproses kode css nya)
-- 
+																							- 
 ## Costumization
 ## Tree Shake atau Purging
 Tree shaking is ==a term commonly used within a JavaScript context to describe the removal of dead code==.
