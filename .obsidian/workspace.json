@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md"
+                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md"
               }
             }
           }
@@ -146,12 +146,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "da483d48f82fbdc3",
+  "active": "ca1bfa133f3795e0",
   "lastOpenFiles": [
+    "Tailwind CSS/Tailwindcss ver 3.xx",
+    "Tailwind CSS/Untitled.md",
+    "Tailwind CSS/Tailwindcss ver 1.xx",
+    "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
+    "Tailwind CSS/ref.md",
+    "Tailwind CSS/Tailwindcss ver 3.xx/TailwindCSS ver 3.xx.md",
+    "Tailwind CSS/Untitled.canvas",
+    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+    "TailwindCSS/Untitled.canvas",
+    "Tailwind CSS",
     "postgresql/error.md",
     "Studi kasus Laravel - Ecommerce/Laravel 9.md",
-    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
-    "Untitled",
     "postgresql",
     "Laravel 6 - Membuat restful API",
     "Pasted image 20240416225207.png",
@@ -177,8 +185,6 @@
     "Untitled 1",
     "Vuejs/Guides/6. Implementasi Project dengan vue cli.md",
     "Vuejs/Vue CLI.md",
-    "Vuejs/eslintvue error.md",
-    "Vuejs/Vue CDN (Content Delivery Network).md",
     "Laravel Vue with inertia",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
@@ -188,8 +194,6 @@
     "Pasted image 20240330163833.png",
     "Untitled.canvas",
     "Studi kasus Laravel - Ecommerce",
-    "create a link.md",
-    "Vuejs",
-    "test {}.md"
+    "Vuejs"
   ]
 }
