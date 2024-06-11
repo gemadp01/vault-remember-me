@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md"
+                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md"
               }
             }
           }
@@ -146,12 +146,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ca1bfa133f3795e0",
+  "active": "da483d48f82fbdc3",
   "lastOpenFiles": [
+    "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
     "Tailwind CSS/Tailwindcss ver 3.xx",
     "Tailwind CSS/Untitled.md",
     "Tailwind CSS/Tailwindcss ver 1.xx",
-    "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
     "Tailwind CSS/ref.md",
     "Tailwind CSS/Tailwindcss ver 3.xx/TailwindCSS ver 3.xx.md",
     "Tailwind CSS/Untitled.canvas",
