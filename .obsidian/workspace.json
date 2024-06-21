@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0974a7d657857731",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +157,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5b5dcde324172536",
+  "active": "0974a7d657857731",
   "lastOpenFiles": [
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "rangkuman-materi-jda/ERD.md",
