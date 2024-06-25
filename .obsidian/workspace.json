@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "rangkuman-materi-jda/Link.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "rangkuman-materi-jda/Link.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "rangkuman-materi-jda/Link.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md"
+                "file": "rangkuman-materi-jda/Link.md"
               }
             }
           }
@@ -148,12 +148,13 @@
   },
   "active": "c6415e3daa96b033",
   "lastOpenFiles": [
+    "rangkuman-materi-jda/ERD.md",
+    "rangkuman-materi-jda/Link.md",
     "rangkuman-materi-jda/contoh schema database.png",
     "Studi kasus Laravel - Ecommerce/One to Many Relationship.png",
     "Studi kasus Laravel - Ecommerce/One to One Relationship.png",
     "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Studi kasus Laravel - Ecommerce/Many to Many Relationship.png",
-    "rangkuman-materi-jda/ERD.md",
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "postgresql/error.md",
     "Vuejs/eslintvue error.md",
