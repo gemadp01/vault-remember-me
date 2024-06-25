@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "cf68ec253fc976b0",
+        "id": "375788a7412eae67",
         "type": "tabs",
         "children": [
           {
-            "id": "5b5dcde324172536",
+            "id": "c6415e3daa96b033",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "0974a7d657857731",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md"
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md"
               }
             }
           }
@@ -157,10 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0974a7d657857731",
+  "active": "ca1bfa133f3795e0",
   "lastOpenFiles": [
-    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+    "Studi kasus Laravel - Ecommerce/Pasted image 20240416210433.png",
     "rangkuman-materi-jda/ERD.md",
+    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "postgresql/error.md",
     "Vuejs/eslintvue error.md",
     "Vuejs/Vue CDN (Content Delivery Network).md",
@@ -169,7 +159,6 @@
     "Welcome.md",
     "create a link.md",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416170158.png",
-    "Studi kasus Laravel - Ecommerce/Pasted image 20240416210433.png",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416225207.png",
     "Untitled.md",
     "rangkuman-materi-jda/MySQL/SQL DML.md",
@@ -200,7 +189,6 @@
     "Laravel Vue with inertia/How to use.md",
     "Laravel Vue with inertia/Konfigurasi.md",
     "Vuejs/Guides (Vue ver 2)/5. Mendalami Component Vuejs.md",
-    "Vuejs/Guides (Vue ver 2)/7. Implementasi Project dengan vue CLI.md",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
     "Pasted image 20240330164715.png",
