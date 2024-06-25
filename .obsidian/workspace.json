@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "rangkuman-materi-jda/ERD.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "rangkuman-materi-jda/ERD.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+                "file": "rangkuman-materi-jda/ERD.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md"
+                "file": "rangkuman-materi-jda/ERD.md"
               }
             }
           }
@@ -146,9 +146,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ca1bfa133f3795e0",
+  "active": "c6415e3daa96b033",
   "lastOpenFiles": [
-    "Studi kasus Laravel - Ecommerce/Pasted image 20240416210433.png",
+    "rangkuman-materi-jda/contoh schema database.png",
+    "Studi kasus Laravel - Ecommerce/One to Many Relationship.png",
+    "Studi kasus Laravel - Ecommerce/One to One Relationship.png",
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Studi kasus Laravel - Ecommerce/Many to Many Relationship.png",
     "rangkuman-materi-jda/ERD.md",
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "postgresql/error.md",
@@ -158,13 +162,10 @@
     "Advanced JavaScript.md",
     "Welcome.md",
     "create a link.md",
-    "Studi kasus Laravel - Ecommerce/Pasted image 20240416170158.png",
-    "Studi kasus Laravel - Ecommerce/Pasted image 20240416225207.png",
     "Untitled.md",
     "rangkuman-materi-jda/MySQL/SQL DML.md",
     "rangkuman-materi-jda/Laravel",
     "rangkuman-materi-jda/MySQL/SQL DDL.md",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "rangkuman-materi-jda/MySQL",
     "rangkuman-materi-jda/ERD",
     "Untitled",

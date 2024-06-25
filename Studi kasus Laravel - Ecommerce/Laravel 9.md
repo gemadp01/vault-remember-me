@@ -435,7 +435,7 @@ foreignId diikuti nama foreignKey yang akan kita gunakan -> constrained terhadap
 - [Touching Parent Timestamps](https://laravel.com/docs/9.x/eloquent-relationships#touching-parent-timestamps)
 ### One to One
 sebuah table dimana setiap table hanya bisa dimiliki salah satu record dari table lainnya (hanya salah satu)
-![[Pasted image 20240416170158.png]]
+![[One to One Relationship.png]]
 satu student hanya memiliki satu contact, begitu juga dengan contact
 satu contact hanya dimiliki satu student (tidak ada student yang memiliki contact yang sama persis)
 
@@ -513,7 +513,7 @@ Student hasOne Contact (karena student menitipkan id pada Contact sebagai foreig
 Contact belongsTo Student (karena contact menyimpan id milik Student sebagai foreignKey)
 
 ### One to Many
-![[Pasted image 20240416210433.png]]
+![[One to Many Relationship.png]]
 salah satu table memiliki banyak record dari table lainnya,
 misal pada contoh diatas,
 satu student hanya bisa memiliki satu wali kelas saja,
@@ -605,7 +605,7 @@ Mengakses Student dari salah satu teacher
 
 !karena data Students memiliki hanya satu teacher, kita lakukan perulangan dengan foreach
 ### Many to Many
-![[Pasted image 20240416225207.png]]
+![[Many to Many Relationship.png]]
 Diantara kedua tabel (Student dan Activity), masing-masing record itu bisa mempunyai hubungan ke record lain dalam jumlah banyak, 
 misal, satu student bisa mengikuti banyak aktivitas disekolahnya
 di aktivitas, dia (activity) bisa mempunyai banyak student untuk mengikutinya
