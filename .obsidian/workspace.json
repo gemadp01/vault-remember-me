@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a5c197c9b531333b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +157,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c6415e3daa96b033",
+  "active": "a5c197c9b531333b",
   "lastOpenFiles": [
     "rangkuman-materi-jda/ERD.md",
     "rangkuman-materi-jda/Link.md",
