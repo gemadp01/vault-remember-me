@@ -58,3 +58,5 @@ lain:
 - **Entitas** merupakan representasi dari **sebuah objek** yang dapat **didefinisikan dan diidentifikasikan dengan jelas**. 
 	**Entitas mewakili objek** yang akan **disimpan dalam database**, 
 	Contoh seperti **makhluk hidup**, **benda**, konsep, tempat, **kegiatan** dan **sebagainya yang dapat berinteraksi dengan entitas lainnya**.
+	*Satu entitas bisa didefinisikan oleh lebih dari satu atribut/value,
+	misal Manusia pasti mempunyai nama, jenis kelamin, tanggal lahir, asal kota, dll.*
