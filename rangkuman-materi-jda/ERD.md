@@ -5,7 +5,7 @@ pada **umumnya database dapat menyimpan data baik text, numerik, waktu, dan seba
 Data-data ini diatur dengan rapi dalam sistem yang memungkinkan kita untuk mengelolanya sesuai kebutuhan.
 ### Sejarah
 **Database management system (DBMS)** pertama kali dikembangkan pada **tahun 1960** oleh ***Charles Bachman***, 
-dengan tujuan untuk menyediakan cara **menyimpan** dan **memanipulasi data dalam jumlah besar** yang lebih efisien dan terorganisir.
+dengan **tujuan untuk menyediakan cara menyimpan** dan **memanipulasi data dalam jumlah besar** yang lebih efisien dan terorganisir.
 
 *misal menyimpan data pada database seperti pemesanan tiket kereta, 
 itu pasti datanya disimpan seperti siapa yang pesan, apa yang dipesan, tujuan kemana & dari mana, harganya berapa **ini semua pasti ada didalam database** sama halnya nama, email, password
