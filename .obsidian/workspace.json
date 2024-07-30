@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6713c12286d86015",
+        "id": "9c33ef62c50125d7",
         "type": "tabs",
         "children": [
           {
-            "id": "b1a40b63a8dfa445",
+            "id": "4e33eec25fa29fd8",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,16 +146,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b1a40b63a8dfa445",
+  "active": "4e33eec25fa29fd8",
   "lastOpenFiles": [
     "rangkuman-materi-jda/Link.md",
     "rangkuman-materi-jda/ERD.md",
     "rangkuman-materi-jda/contoh schema database.png",
+    "Tailwind CSS/Tailwindcss ver 3.xx/TailwindCSS ver 3.xx.md",
+    "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
+    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "Studi kasus Laravel - Ecommerce/One to Many Relationship.png",
     "Studi kasus Laravel - Ecommerce/One to One Relationship.png",
     "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Studi kasus Laravel - Ecommerce/Many to Many Relationship.png",
-    "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "postgresql/error.md",
     "Vuejs/eslintvue error.md",
     "Vuejs/Vue CDN (Content Delivery Network).md",
@@ -171,12 +173,10 @@
     "rangkuman-materi-jda/ERD",
     "Untitled",
     "rangkuman-materi-jda",
-    "Tailwind CSS/Tailwindcss ver 1.xx/TailwindCSS ver 1.xx.md",
     "Tailwind CSS/Tailwindcss ver 3.xx",
     "Tailwind CSS/Untitled.md",
     "Tailwind CSS/Tailwindcss ver 1.xx",
     "Tailwind CSS/ref.md",
-    "Tailwind CSS/Tailwindcss ver 3.xx/TailwindCSS ver 3.xx.md",
     "Tailwind CSS/Untitled.canvas",
     "TailwindCSS/Untitled.canvas",
     "Tailwind CSS",
@@ -190,7 +190,6 @@
     "Laravel Vue with inertia/Install and Uninstalling Laravel Valet.md",
     "Laravel Vue with inertia/How to use.md",
     "Laravel Vue with inertia/Konfigurasi.md",
-    "Vuejs/Guides (Vue ver 2)/5. Mendalami Component Vuejs.md",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
     "Pasted image 20240330164715.png",
