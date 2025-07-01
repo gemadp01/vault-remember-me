@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ERD"
+              "title": "Membuat restful API - Laravel 6"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ERD"
+              "title": "Backlinks for Membuat restful API - Laravel 6"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from ERD"
+              "title": "Outgoing links from Membuat restful API - Laravel 6"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rangkuman-materi-jda/ERD.md",
+                "file": "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ERD"
+              "title": "Outline of Membuat restful API - Laravel 6"
             }
           }
         ]
@@ -170,6 +170,8 @@
   },
   "active": "4e33eec25fa29fd8",
   "lastOpenFiles": [
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Studi kasus Laravel - Ecommerce/E-commerce.md",
     "rangkuman-materi-jda/Link.md",
     "rangkuman-materi-jda/ERD.md",
     "rangkuman-materi-jda/contoh schema database.png",
@@ -178,7 +180,6 @@
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "Studi kasus Laravel - Ecommerce/One to Many Relationship.png",
     "Studi kasus Laravel - Ecommerce/One to One Relationship.png",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Studi kasus Laravel - Ecommerce/Many to Many Relationship.png",
     "postgresql/error.md",
     "Vuejs/eslintvue error.md",
@@ -205,7 +206,6 @@
     "postgresql",
     "Laravel 6 - Membuat restful API",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416215717.png",
-    "Studi kasus Laravel - Ecommerce/E-commerce.md",
     "Studi kasus Laravel - Ecommerce/Step by step.md",
     "Laravel Vue with inertia/Trying config.md",
     "Laravel Vue with inertia/Inertia.md",

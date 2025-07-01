@@ -139,6 +139,8 @@ terus jalankan seedernya
 
 `php artisan migrate:fresh --seed`
 
+
+---
 ## MVC
 Laravel merupakan Framework MVC
 ### Model
