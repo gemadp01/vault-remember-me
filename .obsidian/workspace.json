@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+                "file": "Laravel 11/!laravel.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Laravel 9"
+              "title": "!laravel"
             }
           }
         ]
@@ -170,10 +170,13 @@
   },
   "active": "4e33eec25fa29fd8",
   "lastOpenFiles": [
-    "Studi kasus Laravel - Ecommerce/E-commerce.md",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
-    "rangkuman-materi-jda/ERD.md",
+    "Laravel 11/keyword 'artisan' pada Laravel.md",
+    "Laravel 11/!laravel.md",
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
+    "Laravel 11",
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Studi kasus Laravel - Ecommerce/E-commerce.md",
+    "rangkuman-materi-jda/ERD.md",
     "rangkuman-materi-jda/Link.md",
     "rangkuman-materi-jda/contoh schema database.png",
     "Tailwind CSS/Tailwindcss ver 3.xx/TailwindCSS ver 3.xx.md",
@@ -194,7 +197,6 @@
     "rangkuman-materi-jda/MySQL/SQL DDL.md",
     "rangkuman-materi-jda/MySQL",
     "rangkuman-materi-jda/ERD",
-    "Untitled",
     "rangkuman-materi-jda",
     "Tailwind CSS/Tailwindcss ver 3.xx",
     "Tailwind CSS/Untitled.md",
@@ -211,7 +213,6 @@
     "Laravel Vue with inertia/Inertia.md",
     "Laravel Vue with inertia/Install and Uninstalling Laravel Valet.md",
     "Laravel Vue with inertia/How to use.md",
-    "Laravel Vue with inertia/Konfigurasi.md",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
     "Pasted image 20240330164715.png",
