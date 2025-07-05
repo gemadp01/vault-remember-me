@@ -82,7 +82,8 @@ Prerequisite
 Requirement
 - [PHP 8.2](php.net/downloads.php) (php nanti disimpan kedalam web server)
 - Webserver: [Apache](https://httpd.apache.org/) / [nginx](https://nginx.org/en/download.html) 
-- [MySQL](mysql.com/downloads) berbayar atau MariaDB gratis (optional) karena kita nanti menggunakan sqlite (sequel lite) lebih sederhana (untuk mengetahui perbedaan dari MySQL dengan sqlite)
+- [MySQL](mysql.com/downloads) berbayar atau MariaDB gratis (optional) 
+	karena kita nanti menggunakan sqlite (sequel lite) lebih sederhana (untuk mengetahui perbedaan dari MySQL dengan sqlite)
 - [Composer (package manager pada php)](getcomposer.org/download)
 - [NodeJS](nodejs.org/en/download)
 
