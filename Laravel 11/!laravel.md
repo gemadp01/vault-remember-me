@@ -136,8 +136,8 @@ VSCode Extensions
 	- untuk mengganti web server, kita bisa masuk menu 'preferences' atau mengklik icon roda gigi dikanan pojok atas -> kebagian menu bar 'Services & ports' -> unchecklist 'Apache' -> checklist 'Nginx'
 - ==download & install 'composer'== arahkan ke php yang ada di laragon -> untuk memastikan sudah terinstall atau belum -> buka terminal pada laragon (bebas bisa powershell atau cmd window) -> ketikkan perintah `composer` atau `composer -v`
 - ==download & install 'nodejs'== ver ==**zip/binary**== nya agar kita bisa pasang dilaragon bukan di system operasi windows (tidak perlu karena sudah tersedia di laragon dan pastikan juga versi nya sesuai dengan yang di web resmi nodejs) -> mengecek versi nodejs `node -v`
-- Menjalankan sebuah ekstensi agar aplikasi laragon bisa terkoneksi ke database sqlite karena secara default didalam laragon ekstensi sqlite belum aktif karena laravel default database nya sqlite bukan mysql. 
-	- masuk ke menu PHP dengan klik kanan pada tampilan menu laragon -> 'PHP' -> 'Extensions' -> aktifkan ekstensi 'pdo_sqlite' dan 'sqlite3'
+- ==Menjalankan sebuah ekstensi agar aplikasi laragon bisa terkoneksi ke database sqlite== karena secara default didalam laragon ekstensi sqlite belum aktif karena laravel default database nya sqlite bukan mysql. 
+	- masuk ke menu PHP dengan klik kanan pada tampilan menu laragon -> 'PHP' -> 'Extensions' -> aktifkan ekstensi =='pdo_sqlite==' dan '==sqlite3=='
 - Menu Klik Kanan Laragon (System Tray):
 	![[Pasted image 20250705123719.png]]![[Pasted image 20250705123753.png]]![[Pasted image 20250705123819.png]]
 	1. **Start All / Stop All**
