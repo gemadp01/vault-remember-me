@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Laravel 11/!laravel.md",
+                "file": "Laravel 11/alpinejs/!Alpine.js.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "!laravel"
+              "title": "!Alpine.js"
             }
           }
         ]
@@ -170,16 +170,18 @@
   },
   "active": "4e33eec25fa29fd8",
   "lastOpenFiles": [
+    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
+    "Laravel 11/alpinejs/!Alpine.js.md",
+    "Laravel 11/alpinejs",
+    "Laravel 11/!laravel.md",
     "Laravel 11/image pendukung/Pasted image 20250705123819.png",
     "Laravel 11/image pendukung/Pasted image 20250705123753.png",
     "Laravel 11/image pendukung/Pasted image 20250705123719.png",
     "Laravel 11/image pendukung",
     "Laravel 11/php versi thread dan non-thread safe.md",
-    "Laravel 11/!laravel.md",
     "Laravel 11/keyword 'artisan' pada Laravel.md",
     "Laravel 6 - Membuat restful API/Membuat restful API - Laravel 6.md",
     "Laravel 11",
-    "Studi kasus Laravel - Ecommerce/Laravel 9.md",
     "Studi kasus Laravel - Ecommerce/E-commerce.md",
     "rangkuman-materi-jda/ERD.md",
     "rangkuman-materi-jda/Link.md",
@@ -210,14 +212,12 @@
     "Tailwind CSS/Untitled.canvas",
     "TailwindCSS/Untitled.canvas",
     "Tailwind CSS",
-    "postgresql",
     "Studi kasus Laravel - Ecommerce/Pasted image 20240416215717.png",
     "Studi kasus Laravel - Ecommerce/Step by step.md",
     "Laravel Vue with inertia/Trying config.md",
     "Laravel Vue with inertia/Inertia.md",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331123253.png",
     "Vuejs/Guides (Vue ver 2)/Pasted image 20240331054557.png",
-    "Pasted image 20240330164715.png",
     "Untitled.canvas"
   ]
 }
